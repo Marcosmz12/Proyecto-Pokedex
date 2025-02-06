@@ -18,8 +18,17 @@ h1{
 main {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap ;
+    justify-content: center;
     padding: 50px;
     background-color: yellow;
+}
+
+.pokemon {
+    background-color: aqua; 
+    width: 200px;
+    height: 300px;
+    margin: 20px;
 }
 
 footer {
