@@ -35,6 +35,11 @@ footer {
     background-color: black;
     color: white;
     margin: 0px;
+    padding: 20px; /* Espaciado interno */
+    text-align: center; /* Centrado de texto */
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
 footer p{
     margin: 0px;
