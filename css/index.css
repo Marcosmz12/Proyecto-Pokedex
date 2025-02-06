@@ -1,0 +1,22 @@
+html, body {
+    margin: 0px;
+    padding: 0px;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    background-color: red;
+    justify-content: center;
+}
+
+h1{
+    color: white;
+    text-align: center;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    padding: 50px;
+}
