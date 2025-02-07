@@ -7,7 +7,13 @@ header{
     display: flex;
     flex-direction: column;
     background-color: red;
-    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+#logo-pokemon{
+    height: 100px;
+    width:  250px;
 }
 
 h1{
@@ -18,10 +24,68 @@ h1{
 main {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap ;
+    flex-wrap: wrap;
     justify-content: center;
     padding: 50px;
     background-color: yellow;
+}
+
+.navegador{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+ul{
+    list-style-type: none;
+}
+
+.lista-navegador{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: .5rem;
+}
+
+button{
+    background-color: transparent;
+    border: 0;
+    border-radius: 0;
+}
+
+.boton{
+    background-color: grey;
+    padding: .5rem;
+    border-radius: 100vmax;
+    color: white;
+}
+
+.boton-tipo-fuego{
+    background-color: red;
+    padding: .5rem;
+    border-radius: 100vmax;
+    color: black;
+}
+
+.boton-tipo-agua{
+    background-color: blue;
+    padding: .5rem;
+    border-radius: 100vmax;
+    color: white;
+}
+
+.boton-tipo-planta{
+    background-color: green;
+    padding: .5rem;
+    border-radius: 100vmax;
+    color: white;
+}
+
+#fuego{
+    background-color: red;
+    color: black;
+
 }
 
 .pokemon {
