@@ -28,6 +28,13 @@ main {
     align-items: center;
 }
 
+.buscador{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
 .navegador{
     display: flex;
     flex-direction: column;
