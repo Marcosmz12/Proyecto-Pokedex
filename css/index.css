@@ -196,10 +196,7 @@ button{
     border-radius: 100vmax;
     color: black;
 }
-.contenedor-pokedex{
-    display: grid;
-    grid-template-columns: auto;
-}
+
 .pokemons {
     opacity: 1;
     background-color: aqua; 
@@ -209,8 +206,8 @@ button{
 }
 
 .seccion-pokemons{
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: auto;
 }
 
 footer {
