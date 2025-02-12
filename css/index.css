@@ -1,4 +1,4 @@
-html, body {
+html, body{
     margin: 0px;
     padding: 0px;
 }
@@ -28,11 +28,28 @@ main {
     align-items: center;
 }
 
-.buscador{
+.caja-buscador{
     display: flex;
     flex-direction: row;
     gap: 1rem;
     align-items: center;
+    padding: 10px;
+}
+
+#buscador{
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 300px;
+}
+
+#boton-buscar{
+    background-color: #DA471B;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .navegador{
@@ -58,7 +75,7 @@ button{
     border: 0;
     border-radius: 0;
     cursor: pointer;
-    box-shadow: 0 0 1rem rgba(0, 0, 0, .25);
+    box-shadow: 0 0 2rem rgba(0, 0, 0, .5);
 }
 
 .boton{
@@ -196,7 +213,6 @@ button{
     border-radius: 100vmax;
     color: black;
 }
-
 
 .seccion-pokemons{
     display: flex;
