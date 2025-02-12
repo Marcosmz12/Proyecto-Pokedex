@@ -206,8 +206,10 @@ button{
 }
 
 .seccion-pokemons{
-    display: grid;
-    grid-template-columns: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;   
 }
 
 footer {
