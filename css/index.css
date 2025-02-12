@@ -197,19 +197,24 @@ button{
     color: black;
 }
 
-.pokemons {
-    opacity: 1;
-    background-color: aqua; 
-    width: 200px;
-    height: 300px;
-    margin: 20px;
-}
 
 .seccion-pokemons{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 1rem;   
+}
+
+.pokemons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    flex-direction: column;
+    opacity: 1;
+    background-color: aqua; 
+    width: 200px;
+    height: 300px;
+    margin: 20px;
 }
 
 footer {
