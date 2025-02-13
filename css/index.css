@@ -206,20 +206,27 @@ button{
     padding: 10px;
 }
 .imagenpkmn{
-    background-color:yellow ;
+    background: linear-gradient(to bottom right, yellow, pink) ;
     width:180px;
     height: 160px;
     margin-top: 20px;
     border-radius:5px;
+    border: 5px solid silver;
+    box-sizing: content-box;
 }
 
 .pokemons img {
     width:180px;
     height: 160px;
+
+    border-top-left-radius:40px;
+    border-bottom-right-radius: 25px;
+    opacity:0.75;
+
     
-    border: 5px solid silver;
-    box-sizing: border-box;
-    border-radius: 5px;
+   
+    
+    
 }
 
 .infoPokemon {
