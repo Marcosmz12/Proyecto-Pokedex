@@ -6,6 +6,7 @@ fetch(URL)
     .then(response => response.json())
     .then(data => {
         let pokemons = data.results;
+        // Ordenar los Pokémon por su ID
         for (let i = 0; i < pokemons.length; i++) {
             fetch(pokemons[i].url)
                 .then(response => response.json())
@@ -29,7 +30,7 @@ async function mostrarPokemon(pokemon) {
     divPokemon.classList.add('pokemons');
     imgPOkemon.className = 'imagenpkmn';
     numeroPokemon.classList.add('numero-pokemon');
-    nombrePokemon.classList.add('nombre-pokemon');
+    nombrePokemon.classList.add('infoPokemon');
     divTipoPokemon.classList.add('tipo-pokemon');
     tipoPokemon.classList.add('tipo');
     numeroPokemon.textContent = `#${pokemon.id}`;
