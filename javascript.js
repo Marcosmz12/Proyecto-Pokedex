@@ -1,5 +1,5 @@
 const seccionpokemons = document.querySelector('.seccion-pokemons');
-let URL = "beta.pokeapi.co/graphql/v1beta.";
+let URL = "https://pokeapi.co/api/v2/pokemon?limit=151&offset=0";
 
 async function obtenerPokemons() {
 fetch(URL)
