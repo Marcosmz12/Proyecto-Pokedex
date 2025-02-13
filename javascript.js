@@ -1,32 +1,56 @@
 const seccionpokemons = document.querySelector('.seccion-pokemons');
-let URL = "https://pokeapi.co/api/v2/pokemon/";
+let URL = "https://pokeapi.co/api/v2/pokemon?limit=151&offset=0";
 
-for(let i = 1; i <= 151; i++){
-    fetch(URL + i)
+async function obtenerPokemons() {
+fetch(URL)
     .then(response => response.json())
-    .then(data => mostrarPokemon(data))
+    .then(data => {
+        let pokemons = data.results;
+        for (let i = 0; i < pokemons.length; i++) {
+            fetch(pokemons[i].url)
+                .then(response => response.json())
+                .then(data => {
+                    mostrarPokemon(data);
+                });
+        }
+
+    });
 }
 
-
-function mostrarPokemon(pokemon){
+async function mostrarPokemon(pokemon) {
+    console.log(pokemon);
     const divPokemon = document.createElement('div');
     const imgPOkemon = document.createElement('img');
     const numeroPokemon = document.createElement('p');
     const nombrePokemon = document.createElement('p');
     const divTipoPokemon = document.createElement('div');
     const tipoPokemon = document.createElement('span');
-    
-    div.classList.add('pokemon');
+
+    divPokemon.classList.add('pokemons');
+    imgPOkemon.className = 'imagenpkmn';
+    numeroPokemon.classList.add('numero-pokemon');
+    nombrePokemon.classList.add('nombre-pokemon');
+    divTipoPokemon.classList.add('tipo-pokemon');
+    tipoPokemon.classList.add('tipo');
     numeroPokemon.textContent = `#${pokemon.id}`;
     nombrePokemon.textContent = pokemon.name;
     imgPOkemon.src = pokemon.sprites.front_default;
-    divTipoPokemon.classList.add('tipo-pokemon');
     tipoPokemon.textContent = pokemon.types[0].type.name;
-    if(pokemon.types.length > 1){
+
+    divPokemon.appendChild(imgPOkemon);
+    divPokemon.appendChild(numeroPokemon);
+    divPokemon.appendChild(nombrePokemon);
+
+    divTipoPokemon.appendChild(tipoPokemon);
+    if (pokemon.types.length > 1) {
         const tipoPokemon2 = document.createElement('span');
         tipoPokemon2.textContent = pokemon.types[1].type.name;
         divTipoPokemon.appendChild(tipoPokemon);
     }
+
+    divPokemon.appendChild(divTipoPokemon);
     seccionpokemons.appendChild(divPokemon);
     console.log(pokemon);
 }
+
+obtenerPokemons();
