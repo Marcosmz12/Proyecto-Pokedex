@@ -219,18 +219,16 @@ button{
 .pokemons img {
     width:180px;
     height: 160px;
-
     border-top-left-radius:40px;
     border-bottom-right-radius: 25px;
     opacity:0.75;
-
 }
 
 .infoPokemon {
     margin: 0px;
-    font-family: Pokemon-hueco;
-    font-size: 12px;
-    color:rgb(100, 95, 90)
+    font-family: Pokemon;
+    font-size: 17px;
+    color:black
 }
 
 #planta{
