@@ -2,20 +2,23 @@ const seccionpokemons = document.querySelector('.seccion-pokemons');
 let URL = "https://pokeapi.co/api/v2/pokemon?limit=151&offset=0";
 
 async function obtenerPokemons() {
-fetch(URL)
-    .then(response => response.json())
-    .then(data => {
-        let pokemons = data.results;
-        // Ordenar los Pokémon por su ID
-        for (let i = 0; i < pokemons.length; i++) {
-            fetch(pokemons[i].url)
-                .then(response => response.json())
-                .then(data => {
-                    mostrarPokemon(data);
-                });
-        }
+    const response = await fetch(URL);
+    const data = await response.json();
+    const pokemons = data.results;
 
-    });
+    // Recoger todos los datos de los Pokémon
+    const pokemonData = await Promise.all(
+        pokemons.map(async (pokemon) => {
+            const response = await fetch(pokemon.url);
+            return response.json();
+        })
+    );
+
+    // Ordenar los Pokémon por su ID
+    pokemonData.sort((a, b) => a.id - b.id);
+
+    // Mostrar los Pokémon en el orden correcto
+    pokemonData.forEach((pokemon) => mostrarPokemon(pokemon));
 }
 
 async function mostrarPokemon(pokemon) {
