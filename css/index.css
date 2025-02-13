@@ -190,7 +190,7 @@ button{
     display: flex;
     flex-direction: column;
     opacity: 1;
-    background-color: aqua; 
+    background-image: url(../imagenes/fondopkmnplanta.png); 
     width: 200px;
     height: 320px;
     margin: 15px;
@@ -211,7 +211,8 @@ button{
     height: 160px;
     margin-top: 20px;
     border-radius:5px;
-    border: 5px solid silver;
+    border: 5px solid rgb(196, 191, 191);
+
     box-sizing: content-box;
 }
 
@@ -223,10 +224,6 @@ button{
     border-bottom-right-radius: 25px;
     opacity:0.75;
 
-    
-   
-    
-    
 }
 
 .infoPokemon {
