@@ -485,3 +485,17 @@ botontipoVolador.addEventListener('click', async () => {
     // Mostrar los Pokémon de tipo volador
     pokemonsTipoVolador.forEach((pokemon) => mostrarPokemon(pokemon));
 });
+
+let botonVerTodos = document.getElementById('todos');
+
+botonVerTodos.addEventListener('click', async () => {
+    const response = await fetch(urlPrimeraGeneracion);
+    const data = await response.json();
+    const pokemons = data.results;
+
+    // Limpiar la sección de Pokémon antes de mostrar los nuevos
+    seccionpokemons.innerHTML = '';
+
+    // Mostrar todos los Pokémon
+    pokemons.forEach((pokemon) => mostrarPokemon(pokemon));
+});
