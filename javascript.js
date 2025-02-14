@@ -1,5 +1,5 @@
 const seccionpokemons = document.querySelector('.seccion-pokemons');
-let URL = "https://pokeapi.co/api/v2/pokemon?limit=151&offset=0";
+let URL = "https://pokeapi.co/api/v2/pokemon?limit=1000offset=0";
 
 async function obtenerPokemons() {
     const response = await fetch(URL);
@@ -108,6 +108,9 @@ async function mostrarPokemon(pokemon) {
         case "dragon":
             tipoPokemon.style.backgroundColor = "#0000FF";
             break;
+        case "dark":
+            tipoPokemon.style.backgroundColor = "#000000";
+            break;
     }
 
     // Colorear el segundo tipo
@@ -163,6 +166,9 @@ async function mostrarPokemon(pokemon) {
                 break;
             case "dragon":
                 tipoPokemon2.style.backgroundColor = "#0000FF";
+                break;
+            case "dark":
+                tipoPokemon2.style.backgroundColor = "#000000";
                 break;
         }
     }
