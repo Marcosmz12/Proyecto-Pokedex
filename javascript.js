@@ -21,8 +21,6 @@ async function obtenerPokemons() {
     pokemonData.forEach((pokemon) => mostrarPokemon(pokemon));
 }
 
-let pokemon = false;
-
 async function mostrarPokemon(pokemon) {
     console.log(pokemon);
     const divPokemon = document.createElement('div');
@@ -57,44 +55,118 @@ async function mostrarPokemon(pokemon) {
         divTipoPokemon.appendChild(tipoPokemon);
     }
 
-    if (pokemon.types[0].type.name == "grass") {
-        tipoPokemon.style.backgroundColor = "#7CFC00";
-    } else if (pokemon.types[0].type.name == "poison") {
-        tipoPokemon.style.backgroundColor = "#8A2BE2";
-    } else if (pokemon.types[0].type.name == "fire") {
-        tipoPokemon.style.backgroundColor = "#FF4500";
-    } else if (pokemon.types[0].type.name == "flying") {
-        tipoPokemon.style.backgroundColor = "#87CEEB";
-    } else if (pokemon.types[0].type.name == "water") {
-        tipoPokemon.style.backgroundColor = "#00BFFF";
-    } else if (pokemon.types[0].type.name == "bug") {
-        tipoPokemon.style.backgroundColor = "#32CD32";
-    } else if (pokemon.types[0].type.name == "normal") {
-        tipoPokemon.style.backgroundColor = "#A9A9A9";
-    } else if (pokemon.types[0].type.name == "electric") {
-        tipoPokemon.style.backgroundColor = "#FFD700";
-    } else if (pokemon.types[0].type.name == "ground") {
-        tipoPokemon.style.backgroundColor = "#DAA520";
-    } else if (pokemon.types[0].type.name == "fairy") {
-        tipoPokemon.style.backgroundColor = "#FF69B4";
-    } else if (pokemon.types[0].type.name == "fighting") {
-        tipoPokemon.style.backgroundColor = "#B22222";
-    } else if (pokemon.types[0].type.name == "psychic") {
-        tipoPokemon.style.backgroundColor = "#FF1493";
-    } else if (pokemon.types[0].type.name == "rock") {
-        tipoPokemon.style.backgroundColor = "#A0522D";
-    } else if (pokemon.types[0].type.name == "steel") {
-        tipoPokemon.style.backgroundColor = "#C0C0C0";
-    } else if (pokemon.types[0].type.name == "ice") {
-        tipoPokemon.style.backgroundColor = "#00BFFF";
-    } else if (pokemon.types[0].type.name == "ghost") {
-        tipoPokemon.style.backgroundColor = "#4B0082";
-    } else if (pokemon.types[0].type.name == "dragon") {
-        tipoPokemon.style.backgroundColor = "#0000FF";
-    } else if (pokemon.types[0].type.name == "dark") {
-        tipoPokemon.style.backgroundColor = "#000000";
+    switch (pokemon.types[0].type.name) {
+        case "grass":
+            divPokemon.style.backgroundImage = "url(imagenes/fondopkmnplanta.png)";
+            tipoPokemon.style.backgroundColor = "#7CFC00";
+            break;
+        case "poison":
+            tipoPokemon.style.backgroundColor = "#8A2BE2";
+            break;
+        case "fire":
+            tipoPokemon.style.backgroundColor = "#FF4500";
+            break;
+        case "flying":
+            tipoPokemon.style.backgroundColor = "#87CEEB";
+            break;
+        case "water":
+            tipoPokemon.style.backgroundColor = "#00BFFF";
+            break;
+        case "bug":
+            tipoPokemon.style.backgroundColor = "#32CD32";
+            break;
+        case "normal":
+            tipoPokemon.style.backgroundColor = "#A9A9A9";
+            break;
+        case "electric":
+            tipoPokemon.style.backgroundColor = "#FFD700";
+            break;
+        case "ground":
+            tipoPokemon.style.backgroundColor = "#DAA520";
+            break;
+        case "fairy":
+            tipoPokemon.style.backgroundColor = "#FF69B4";
+            break;
+        case "fighting":
+            tipoPokemon.style.backgroundColor = "#B22222";
+            break;
+        case "psychic":
+            tipoPokemon.style.backgroundColor = "#FF1493";
+            break;
+        case "rock":
+            tipoPokemon.style.backgroundColor = "#A0522D";
+            break;
+        case "steel":
+            tipoPokemon.style.backgroundColor = "#C0C0C0";
+            break;
+        case "ice":
+            tipoPokemon.style.backgroundColor = "#00BFFF";
+            break;
+        case "ghost":
+            tipoPokemon.style.backgroundColor = "#4B0082";
+            break;
+        case "dragon":
+            tipoPokemon.style.backgroundColor = "#0000FF";
+            break;
     }
 
+    // Colorear el segundo tipo
+    if (pokemon.types.length > 1) {
+        switch (pokemon.types[1].type.name) {
+            case "grass":
+                tipoPokemon2.style.backgroundColor = "#7CFC00";
+                break;
+            case "poison":
+                tipoPokemon2.style.backgroundColor = "#8A2BE2";
+                break;
+            case "fire":
+                tipoPokemon2.style.backgroundColor = "#FF4500";
+                break;
+            case "flying":
+                tipoPokemon2.style.backgroundColor = "#87CEEB";
+                break;
+            case "water":
+                tipoPokemon2.style.backgroundColor = "#00BFFF";
+                break;
+            case "bug":
+                tipoPokemon2.style.backgroundColor = "#32CD32";
+                break;
+            case "normal":
+                tipoPokemon2.style.backgroundColor = "#A9A9A9";
+                break;
+            case "electric":
+                tipoPokemon2.style.backgroundColor = "#FFD700";
+                break;
+            case "ground":
+                tipoPokemon2.style.backgroundColor = "#DAA520";
+                break;
+            case "fairy":
+                tipoPokemon2.style.backgroundColor = "#FF69B4";
+                break;
+            case "fighting":
+                tipoPokemon2.style.backgroundColor = "#B22222";
+                break;
+            case "psychic":
+                tipoPokemon2.style.backgroundColor = "#FF1493";
+                break;
+            case "rock":
+                tipoPokemon2.style.backgroundColor = "#A0522D";
+                break;
+            case "steel":
+                tipoPokemon2.style.backgroundColor = "#C0C0C0";
+                break;
+            case "ice":
+                tipoPokemon2.style.backgroundColor = "#00BFFF";
+                break;
+            case "ghost":
+                tipoPokemon2.style.backgroundColor = "#4B0082";
+                break;
+            case "dragon":
+                tipoPokemon2.style.backgroundColor = "#0000FF";
+                break;
+        }
+    }
+    
     divPokemon.appendChild(divTipoPokemon);
     seccionpokemons.appendChild(divPokemon);
     console.log(pokemon);

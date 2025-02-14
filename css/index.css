@@ -190,7 +190,6 @@ button{
     display: flex;
     flex-direction: column;
     opacity: 1;
-    background-image: url(../imagenes/fondopkmnplanta.png); 
     width: 200px;
     height: 320px;
     margin: 15px;
