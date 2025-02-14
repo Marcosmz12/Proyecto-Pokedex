@@ -230,15 +230,13 @@ button{
     color:black
 }
 
-#planta{
+.tipo1{
     text-align: center;
-    background-color: #9bcc50;
     border-radius: 4vmax;
     width: 100px;
 }
-#veneno{
+.tipo2{
     text-align: center;
-    background-color: #b97fc9;
     border-radius: 4vmax;
     width: 100px;
 }
