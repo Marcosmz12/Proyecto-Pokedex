@@ -1,26 +1,5 @@
 const seccionpokemons = document.querySelector('.seccion-pokemons');
 let URL = "https://pokeapi.co/api/v2/pokemon?limit=1000offset=0";
-let prevButton = document.getElementById('Anterior');
-let nextButton = document.getElementById('Siguiente');
-const pageInfo = document.getElementById('page-info'); // Obtener el elemento para mostrar el número de páginas
-let currentPage = 1;
-const limit = 20; // Número de Pokémon por página
-let totalPokemons = 0; // Variable para almacenar el número total de Pokémon
-
-prevButton.addEventListener('click', () => {
-    if (currentPage > 1) {
-        currentPage--;
-        obtenerPokemons();
-    }
-});
-
-nextButton.addEventListener('click', () => {
-    currentPage++;
-    obtenerPokemons();
-});
-
-document.body.appendChild(prevButton);
-document.body.appendChild(nextButton);
 
 
 async function obtenerPokemons() {
@@ -41,6 +20,13 @@ async function obtenerPokemons() {
 
     // Mostrar los Pokémon en el orden correcto
     pokemonData.forEach((pokemon) => mostrarPokemon(pokemon));
+    const prevButton = document.getElementById('Anterior');
+    const nextButton = document.getElementById('Siguiente');
+    const pageInfo = document.getElementById('page-info');
+    let currentPage = 1;
+    const limit = 20;
+    let totalPokemons = 0;
+
 }
 
 async function mostrarPokemon(pokemon) {
@@ -196,16 +182,31 @@ async function mostrarPokemon(pokemon) {
         
     }
 
+    const prevButton = document.getElementById('Anterior');
+    const nextButton = document.getElementById('Siguiente');
+    const pageInfo = document.getElementById('page-info');
+    let currentPage = 1;
+    const limit = 20;
+    let totalPokemons = 0;
+
+    function actualizarPaginacion() {
+        pageInfo.textContent = `Página ${currentPage}`;
+        prevButton.disabled = currentPage === 1;
+        nextButton.disabled = (currentPage * limit) >= totalPokemons;
+    }
+
     prevButton.addEventListener('click', () => {
         if (currentPage > 1) {
             currentPage--;
             obtenerPokemons();
         }
     });
-    
+
     nextButton.addEventListener('click', () => {
-        currentPage++;
-        obtenerPokemons();
+        if ((currentPage * limit) < totalPokemons) {
+            currentPage++;
+            obtenerPokemons();
+        }
     });
     
     
