@@ -486,16 +486,24 @@ botontipoVolador.addEventListener('click', async () => {
     pokemonsTipoVolador.forEach((pokemon) => mostrarPokemon(pokemon));
 });
 
-let botonVerTodos = document.getElementById('todos');
+let verTodos = document.getElementById('todos');
 
-botonVerTodos.addEventListener('click', async () => {
+verTodos.addEventListener('click', async () => {
     const response = await fetch(urlPrimeraGeneracion);
     const data = await response.json();
     const pokemons = data.results;
+
+    // Recoger todos los datos de los primeros 151 Pokémon
+    const pokemonData = await Promise.all(
+        pokemons.map(async (pokemon) => {
+            const response = await fetch(pokemon.url);
+            return response.json();
+        })
+    );
 
     // Limpiar la sección de Pokémon antes de mostrar los nuevos
     seccionpokemons.innerHTML = '';
 
     // Mostrar todos los Pokémon
-    pokemons.forEach((pokemon) => mostrarPokemon(pokemon));
+    pokemonData.forEach((pokemon) => mostrarPokemon(pokemon));
 });

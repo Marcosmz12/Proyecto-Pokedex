@@ -240,6 +240,13 @@ button{
     width: 100px;
 }
 
+.paginacion{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    padding: 10px;
+}
+
 footer {
     background-color: black;
     color: white;
