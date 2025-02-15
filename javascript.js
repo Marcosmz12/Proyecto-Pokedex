@@ -84,6 +84,7 @@ async function mostrarPokemon(pokemon) {
             tipoPokemon.style.backgroundColor = "#32CD32";
             break;
         case "normal":
+            divPokemon.style.backgroundImage = "url(imagenes/fondoNormales.png)";
             tipoPokemon.style.backgroundColor = "#A9A9A9";
             break;
         case "electric":
