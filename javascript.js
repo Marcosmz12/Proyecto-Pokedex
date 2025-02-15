@@ -132,6 +132,7 @@ async function mostrarPokemon(pokemon) {
             tipoPokemon.style.backgroundColor = "#0000FF";
             break;
         case "dark":
+            divPokemon.style.backgroundImage = "url(imagenes/fondoSiniestro.png)";
             tipoPokemon.style.backgroundColor = "#000000";
             break;
     }
