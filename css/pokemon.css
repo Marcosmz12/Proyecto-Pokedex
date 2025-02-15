@@ -27,6 +27,8 @@ section {
     background-color: blue;
     width: 400px;
     height: 640px;
+    border:12px solid red;
+    margin-block: 30px;
 }
 
 .evoluciones{

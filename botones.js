@@ -1,5 +1,7 @@
-let botontipoAgua = document.getElementById('agua');
 let urlPrimeraGeneracion = "https://pokeapi.co/api/v2/pokemon?limit=1000&offset=0";
+
+
+let botontipoAgua = document.getElementById('agua');
 
 botontipoAgua.addEventListener('click', async () => {
     const response = await fetch(urlPrimeraGeneracion);
