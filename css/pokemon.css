@@ -12,15 +12,17 @@ header{
 }
 
 main {
-    background-color: bisque;
+    background-image: url("../imagenes/pokemo151.webp");
+    background-size:cover;
+    
 }
 
 
 section {
-    background-color: aquamarine;
+    
     display: flex;
     justify-content: center;
-    align-items: center;
+    flex-wrap: wrap;
 }
 
 .cartaPokemonIndividual {
@@ -29,11 +31,40 @@ section {
     height: 640px;
     border:12px solid red;
     margin-block: 30px;
+    border-radius: 10px;
+    margin-inline: 20px;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+
+#descripcion {
+    display: block;
+
+}
+
+.cartaPokemonIndividual img {
+    width: 198px;
+    height:176px;
+    margin-top: 20px;
+    margin-left: 15px;
+    border: 3px solid silver;
+    border-top-left-radius: 45px;
+    border-bottom-right-radius: 28px;
+}
+
+ul {
+    margin-top: 50px;
+    height: fit-content;
+}
+table{
+    margin-top: 10px;
 }
 
 .evoluciones{
    
-   background-color: blueviolet;
+   
 }
 
 .evolucionespokemon {
