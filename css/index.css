@@ -196,6 +196,7 @@ button{
     border: 7px solid red;
     border-radius: 10px;
     align-items: center;
+    
 }
 
 .tipo-pokemon{
@@ -204,23 +205,16 @@ button{
     align-items: center;
     padding: 10px;
 }
-.imagenpkmn{
-    background: linear-gradient(to bottom right, yellow, pink) ;
-    width:180px;
-    height: 160px;
-    margin-top: 20px;
-    border-radius:5px;
-    border: 5px solid rgb(196, 191, 191);
-
-    box-sizing: content-box;
-}
 
 .pokemons img {
+    background: linear-gradient(to bottom right,yellow,pink) ;
+    border: 5px solid rgb(196, 191, 191);
+    margin-top: 20px;
     width:180px;
     height: 160px;
     border-top-left-radius:40px;
     border-bottom-right-radius: 25px;
-    opacity:0.75;
+
 }
 
 .infoPokemon {
