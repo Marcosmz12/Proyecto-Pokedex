@@ -1,5 +1,27 @@
 const seccionpokemons = document.querySelector('.seccion-pokemons');
 let URL = "https://pokeapi.co/api/v2/pokemon?limit=1000offset=0";
+let prevButton = document.getElementById('Anterior');
+let nextButton = document.getElementById('Siguiente');
+const pageInfo = document.getElementById('page-info'); // Obtener el elemento para mostrar el número de páginas
+let currentPage = 1;
+const limit = 20; // Número de Pokémon por página
+let totalPokemons = 0; // Variable para almacenar el número total de Pokémon
+
+prevButton.addEventListener('click', () => {
+    if (currentPage > 1) {
+        currentPage--;
+        obtenerPokemons();
+    }
+});
+
+nextButton.addEventListener('click', () => {
+    currentPage++;
+    obtenerPokemons();
+});
+
+document.body.appendChild(prevButton);
+document.body.appendChild(nextButton);
+
 
 async function obtenerPokemons() {
     const response = await fetch(URL);
@@ -61,22 +83,18 @@ async function mostrarPokemon(pokemon) {
             tipoPokemon.style.backgroundColor = "#7CFC00";
             break;
         case "poison":
-            divPokemon.style.backgroundImage = "url(imagenes/fondoVeneno.png)";
             tipoPokemon.style.backgroundColor = "#8A2BE2";
             break;
         case "fire":
-            divPokemon.style.backgroundImage = "url(imagenes/fondoFuegovolteado.png)";
             tipoPokemon.style.backgroundColor = "#FF4500";
             break;
         case "flying":
             tipoPokemon.style.backgroundColor = "#87CEEB";
             break;
         case "water":
-            divPokemon.style.backgroundImage = "url(imagenes/fondoAgua.png)";
             tipoPokemon.style.backgroundColor = "#00BFFF";
             break;
         case "bug":
-            divPokemon.style.backgroundImage = "url(imagenes/fondoBicho.png)";
             tipoPokemon.style.backgroundColor = "#32CD32";
             break;
         case "normal":
@@ -84,37 +102,30 @@ async function mostrarPokemon(pokemon) {
             tipoPokemon.style.backgroundColor = "#A9A9A9";
             break;
         case "electric":
-            divPokemon.style.backgroundImage = "url(imagenes/fondoElectrico.png)";
             tipoPokemon.style.backgroundColor = "#FFD700";
             break;
         case "ground":
-            divPokemon.style.backgroundImage = "url(imagenes/fondoTierra.png)";
             tipoPokemon.style.backgroundColor = "#DAA520";
             break;
         case "fairy":
-            divPokemon.style.backgroundImage = "url(imagenes/fondoHada.png)";
             tipoPokemon.style.backgroundColor = "#FF69B4";
             break;
         case "fighting":
             tipoPokemon.style.backgroundColor = "#B22222";
             break;
         case "psychic":
-            divPokemon.style.backgroundImage = "url(imagenes/fondoPsiquico.png)";
             tipoPokemon.style.backgroundColor = "#FF1493";
             break;
         case "rock":
-            divPokemon.style.backgroundImage = "url(imagenes/fondoRoca.png)";
             tipoPokemon.style.backgroundColor = "#A0522D";
             break;
         case "steel":
-            divPokemon.style.backgroundImage = "url(imagenes/fondoAcero.png)"
             tipoPokemon.style.backgroundColor = "#C0C0C0";
             break;
         case "ice":
             tipoPokemon.style.backgroundColor = "#00BFFF";
             break;
         case "ghost":
-            divPokemon.style.backgroundImage = "url(imagenes/fondoFantasma.png)";
             tipoPokemon.style.backgroundColor = "#4B0082";
             break;
         case "dragon":
@@ -183,7 +194,21 @@ async function mostrarPokemon(pokemon) {
                 tipoPokemon2.style.backgroundColor = "#000000";
                 break;
         }
+        
     }
+
+    prevButton.addEventListener('click', () => {
+        if (currentPage > 1) {
+            currentPage--;
+            obtenerPokemons();
+        }
+    });
+    
+    nextButton.addEventListener('click', () => {
+        currentPage++;
+        obtenerPokemons();
+    });
+    
     
     divPokemon.appendChild(divTipoPokemon);
     seccionpokemons.appendChild(divPokemon);
