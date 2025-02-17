@@ -88,10 +88,12 @@ async function mostrarPokemon(pokemon) {
     switch (pokemon.types[0].type.name) {
         case "grass":
             divPokemon.style.backgroundImage = "url(imagenes/fondopkmnplanta.png)";
+            divPokemon.style.borderColor = "#00c70c"
             tipoPokemon.style.backgroundColor = "#7CFC00";
             break;
         case "poison":
             divPokemon.style.backgroundImage = "url(imagenes/fondoVeneno.png)";
+            divPokemon.style.borderColor = "#a217b8";
             tipoPokemon.style.backgroundColor = "#8A2BE2";
             break;
         case "fire":
@@ -100,61 +102,78 @@ async function mostrarPokemon(pokemon) {
             break;
         case "flying":
             divPokemon.style.backgroundImage = "url(imagenes/fondoVolador.png)";
+            divPokemon.style.borderColor = "#f7dff1";
+
             tipoPokemon.style.backgroundColor = "#87CEEB";
             break;
         case "water":
             divPokemon.style.backgroundImage = "url(imagenes/fondoAgua.png)";
+            divPokemon.style.borderColor = "#0070ff";
             tipoPokemon.style.backgroundColor = "#00BFFF";
             break;
         case "bug":
             divPokemon.style.backgroundImage = "url(imagenes/fondoBicho.png)";
+            divPokemon.style.borderColor = "#92ff2c";
             tipoPokemon.style.backgroundColor = "#32CD32";
             break;
         case "normal":
             divPokemon.style.backgroundImage = "url(imagenes/fondoNormales.png)";
+            divPokemon.style.borderColor = "#b6b6b6";
             tipoPokemon.style.backgroundColor = "#A9A9A9";
             break;
         case "electric":
             divPokemon.style.backgroundImage = "url(imagenes/fondoElectrico.png)";
+            divPokemon.style.borderColor = "#f6ff31";
             tipoPokemon.style.backgroundColor = "#FFD700";
             break;
         case "ground":
             divPokemon.style.backgroundImage = "url(imagenes/fondoTierra.png)";
+            divPokemon.style.borderColor = "#eccb0f";
             tipoPokemon.style.backgroundColor = "#DAA520";
             break;
         case "fairy":
             divPokemon.style.backgroundImage = "url(imagenes/fondoHada.png)";
+            divPokemon.style.borderColor = "#ffa0b4"; 
             tipoPokemon.style.backgroundColor = "#FF69B4";
             break;
         case "fighting":
+            divPokemon.style.borderColor = "#a00000";
             tipoPokemon.style.backgroundColor = "#B22222";
             break;
         case "psychic":
             divPokemon.style.backgroundImage = "url(imagenes/fondoPsiquico.png)";
+            divPokemon.style.borderColor = "#ba71f4";
             tipoPokemon.style.backgroundColor = "#FF1493";
             break;
         case "rock":
             divPokemon.style.backgroundImage = "url(imagenes/fondoRoca.png)";
+            divPokemon.style.borderColor = "#7f5618";
             tipoPokemon.style.backgroundColor = "#A0522D";
             break;
         case "steel":
             divPokemon.style.backgroundImage = "url(imagenes/fondoAcero.png)"
+            divPokemon.style.borderColor = "#d0d0d0"; 
             tipoPokemon.style.backgroundColor = "#C0C0C0";
             break;
         case "ice":
             divPokemon.style.backgroundImage = "url(imagenes/fondoHielo.png)";
+            divPokemon.style.borderColor = "#70f0ff";
             tipoPokemon.style.backgroundColor = "#00BFFF";
             break;
         case "ghost":
             divPokemon.style.backgroundImage = "url(imagenes/fondoFantasma.png)";
+            divPokemon.style.borderColor = "#5d4aa7"; 
             tipoPokemon.style.backgroundColor = "#4B0082";
             break;
         case "dragon":
             divPokemon.style.backgroundImage = "url(imagenes/fondoDragon.png)";
+            divPokemon.style.borderColor = "#a9e794"; 
             tipoPokemon.style.backgroundColor = "#0000FF";
             break;
         case "dark":
             divPokemon.style.backgroundImage = "url(imagenes/fondoSiniestro.png)";
+            divPokemon.style.borderColor = "#4c517e"; 
+            
             tipoPokemon.style.backgroundColor = "#000000";
             break;
     }
