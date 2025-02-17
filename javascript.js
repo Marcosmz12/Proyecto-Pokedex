@@ -1,13 +1,21 @@
 const seccionpokemons = document.querySelector('.seccion-pokemons');
-let URL = "https://pokeapi.co/api/v2/pokemon?limit=1000offset=0";
-
+const prevButton = document.getElementById('Anterior');
+const nextButton = document.getElementById('Siguiente');
+const pageInfo = document.getElementById('page-info');
+const filtroTipo = document.getElementById('filtro-tipo');
+const btnFiltrar = document.getElementById('btnFiltrar');
+let currentPage = 1;
+const limit = 20; // Número de Pokémon por página
+const maxPokemons = 1000; // Máximo de Pokémon a mostrar
+let pokemonData = []; // Array para almacenar los datos de los Pokémon
 
 async function obtenerPokemons() {
+    let offset = (currentPage - 1) * limit;
+    let URL = `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`;
     const response = await fetch(URL);
     const data = await response.json();
     const pokemons = data.results;
 
-    // Recoger todos los datos de los Pokémon
     const pokemonData = await Promise.all(
         pokemons.map(async (pokemon) => {
             const response = await fetch(pokemon.url);
@@ -15,19 +23,33 @@ async function obtenerPokemons() {
         })
     );
 
-    // Ordenar los Pokémon por su ID
     pokemonData.sort((a, b) => a.id - b.id);
 
-    // Mostrar los Pokémon en el orden correcto
+    seccionpokemons.innerHTML = ''; // Limpia la sección antes de añadir nuevos Pokémon
     pokemonData.forEach((pokemon) => mostrarPokemon(pokemon));
-    const prevButton = document.getElementById('Anterior');
-    const nextButton = document.getElementById('Siguiente');
-    const pageInfo = document.getElementById('page-info');
-    let currentPage = 1;
-    const limit = 20;
-    let totalPokemons = 0;
 
+    actualizarPaginacion();
 }
+
+function actualizarPaginacion() {
+    pageInfo.textContent = `Página ${currentPage}`;
+    prevButton.disabled = currentPage === 1;
+    nextButton.disabled = (currentPage * limit) >= maxPokemons;
+}
+
+prevButton.addEventListener('click', () => {
+    if (currentPage > 1) {
+        currentPage--;
+        obtenerPokemons();
+    }
+});
+
+nextButton.addEventListener('click', () => {
+    if ((currentPage * limit) < maxPokemons) {
+        currentPage++;
+        obtenerPokemons();
+    }
+});
 
 async function mostrarPokemon(pokemon) {
     console.log(pokemon);
@@ -197,33 +219,6 @@ async function mostrarPokemon(pokemon) {
         }
         
     }
-
-    const prevButton = document.getElementById('Anterior');
-    const nextButton = document.getElementById('Siguiente');
-    const pageInfo = document.getElementById('page-info');
-    let currentPage = 1;
-    const limit = 20;
-    let totalPokemons = 0;
-
-    function actualizarPaginacion() {
-        pageInfo.textContent = `Página ${currentPage}`;
-        prevButton.disabled = currentPage === 1;
-        nextButton.disabled = (currentPage * limit) >= totalPokemons;
-    }
-
-    prevButton.addEventListener('click', () => {
-        if (currentPage > 1) {
-            currentPage--;
-            obtenerPokemons();
-        }
-    });
-
-    nextButton.addEventListener('click', () => {
-        if ((currentPage * limit) < totalPokemons) {
-            currentPage++;
-            obtenerPokemons();
-        }
-    });
     
     
     divPokemon.appendChild(divTipoPokemon);
