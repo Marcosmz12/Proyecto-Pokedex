@@ -1,6 +1,13 @@
 let urlPrimeraGeneracion = "https://pokeapi.co/api/v2/pokemon?limit=1000&offset=0";
 
-
+//let urlSegundaGeneracion = "https://pokeapi.co/api/v2/pokemon?limit=251&offset=151";
+//let urlTerceraGeneración = "https://pokeapi.co/api/v2/pokemon?limit=386&offset=251";
+//let urlCuartaGeneracion = "https://pokeapi.co/api/v2/pokemon?limit=493&offset=386";
+//let urlQuintaGeneracion = "https://pokeapi.co/api/v2/pokemon?limit=649&offset=493";
+//let urlSextaGeneracion = "https://pokeapi.co/api/v2/pokemon?limit=721&offset=649";
+//let urlSeptimaGeneracion = "https://pokeapi.co/api/v2/pokemon?limit=809&offset=721";
+//let urlOctavaGeneracion = "https://pokeapi.co/api/v2/pokemon?limit=898&offset=809";
+//let urlNovenaGeneracion = "https://pokeapi.co/api/v2/pokemon?limit=1010&offset=898";
 let botontipoAgua = document.getElementById('agua');
 
 botontipoAgua.addEventListener('click', async () => {

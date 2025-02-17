@@ -210,7 +210,8 @@ button{
     background: linear-gradient(to bottom right,yellow,pink) ;
     border: 5px solid rgb(196, 191, 191);
     margin-top: 20px;
-    width:180px;
+    
+    width:170px;
     height: 160px;
     border-top-left-radius:40px;
     border-bottom-right-radius: 25px;
