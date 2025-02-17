@@ -8,6 +8,40 @@ const limit = 20; // Número de Pokémon por página
 let listaFiltrada = []; // Aquí guardaremos la lista de Pokémon filtrados
 let tipoSeleccionado = "todos"; // Tipo seleccionado por el usuario
 
+const buscador = document.getElementById('buscador');
+const botonBuscar = document.getElementById('boton-buscar');
+
+// ✅ Evento al hacer clic en el botón de búsqueda
+botonBuscar.addEventListener('click', () => {
+    let filtro = buscador.value.toLowerCase().trim();
+
+    if (filtro === '') {
+        mostrarPagina(); // Si está vacío, vuelve a la paginación normal
+        return;
+    }
+
+    let resultados = listaFiltrada.filter(pokemon => {
+        let numero = pokemon.url.split('/').filter(Boolean).pop(); // Extrae el ID de la URL
+        return pokemon.name.includes(filtro) || numero === filtro;
+    });
+
+    mostrarResultadosBusqueda(resultados);
+});
+
+// ✅ Función para mostrar solo los Pokémon filtrados
+async function mostrarResultadosBusqueda(resultados) {
+    seccionpokemons.innerHTML = resultados.length > 0 ? '' : '<p>No se encontraron Pokémon.</p>';
+
+    const pokemonData = await Promise.all(
+        resultados.map(async (poke) => {
+            const res = await fetch(poke.url);
+            return res.json();
+        })
+    );
+
+    pokemonData.forEach(mostrarPokemon);
+}
+
 // ✅ Mapeo de nombres de tipo en español a inglés (como los usa la API)
 const typeMapping = {
     "agua": "water",
