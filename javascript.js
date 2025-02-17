@@ -2,52 +2,110 @@ const seccionpokemons = document.querySelector('.seccion-pokemons');
 const prevButton = document.getElementById('Anterior');
 const nextButton = document.getElementById('Siguiente');
 const pageInfo = document.getElementById('page-info');
-const filtroTipo = document.getElementById('filtro-tipo');
-const btnFiltrar = document.getElementById('btnFiltrar');
+const filtroTipo = document.getElementById('seleccion-tipo');
 let currentPage = 1;
 const limit = 20; // Número de Pokémon por página
-const maxPokemons = 1010; // Máximo de Pokémon a mostrar
-let pokemonData = []; // Array para almacenar los datos de los Pokémon
+let listaFiltrada = []; // Aquí guardaremos la lista de Pokémon filtrados
+let tipoSeleccionado = "todos"; // Tipo seleccionado por el usuario
 
+// ✅ Mapeo de nombres de tipo en español a inglés (como los usa la API)
+const typeMapping = {
+    "agua": "water",
+    "acero": "steel",
+    "bicho": "bug",
+    "dragon": "dragon",
+    "electrico": "electric",
+    "fuego": "fire",
+    "fantasma": "ghost",
+    "hada": "fairy",
+    "hielo": "ice",
+    "lucha": "fighting",
+    "normal": "normal",
+    "planta": "grass",
+    "psiquico": "psychic",
+    "roca": "rock",
+    "siniestro": "dark",
+    "tierra": "ground",
+    "veneno": "poison",
+    "volador": "flying",
+};
+
+// ✅ Evento para cambiar el tipo de Pokémon filtrado
+filtroTipo.addEventListener('change', async () => {
+    tipoSeleccionado = filtroTipo.value;
+    currentPage = 1; // Reiniciar a la primera página
+    await obtenerPokemons();
+    mostrarPagina();
+});
+
+// ✅ Función para obtener todos los Pokémon filtrados por tipo o paginados
 async function obtenerPokemons() {
-    let offset = (currentPage - 1) * limit;
-    let URL = `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`;
-    const response = await fetch(URL);
-    const data = await response.json();
-    const pokemons = data.results;
+    seccionpokemons.innerHTML = "<p>Cargando Pokémon...</p>";
+
+    try {
+        if (tipoSeleccionado === "todos") {
+            // Modo normal (paginación de la lista general)
+            let URL = `https://pokeapi.co/api/v2/pokemon?limit=1010&offset=0`;
+            const response = await fetch(URL);
+            const data = await response.json();
+            
+            listaFiltrada = data.results;
+        } else {
+            // Filtrar por tipo (obtenemos TODOS los Pokémon de ese tipo)
+            let tipoIngles = typeMapping[tipoSeleccionado];
+            const response = await fetch(`https://pokeapi.co/api/v2/type/${tipoIngles}`);
+            const data = await response.json();
+
+            listaFiltrada = data.pokemon.map(p => p.pokemon); // Guardamos solo los Pokémon
+        }
+
+        mostrarPagina();
+    } catch (error) {
+        seccionpokemons.innerHTML = "<p>Error al cargar Pokémon.</p>";
+        console.error("Error al obtener Pokémon:", error);
+    }
+}
+
+// ✅ Función para mostrar los Pokémon de la página actual
+async function mostrarPagina() {
+    seccionpokemons.innerHTML = "<p>Cargando Pokémon...</p>";
+
+    let inicio = (currentPage - 1) * limit;
+    let fin = inicio + limit;
+    let pokemonsPagina = listaFiltrada.slice(inicio, fin); // Cortamos solo los Pokémon de esta página
 
     const pokemonData = await Promise.all(
-        pokemons.map(async (pokemon) => {
-            const response = await fetch(pokemon.url);
-            return response.json();
+        pokemonsPagina.map(async (poke) => {
+            const res = await fetch(poke.url);
+            return res.json();
         })
     );
 
-    pokemonData.sort((a, b) => a.id - b.id);
-
-    seccionpokemons.innerHTML = ''; // Limpia la sección antes de añadir nuevos Pokémon
-    pokemonData.forEach((pokemon) => mostrarPokemon(pokemon));
+    seccionpokemons.innerHTML = ''; // Limpiar antes de agregar
+    pokemonData.forEach(mostrarPokemon);
 
     actualizarPaginacion();
 }
 
+// ✅ Función para actualizar la paginación
 function actualizarPaginacion() {
-    pageInfo.textContent = `Página ${currentPage}`;
+    pageInfo.textContent = `Página ${currentPage} / ${Math.ceil(listaFiltrada.length / limit)}`;
     prevButton.disabled = currentPage === 1;
-    nextButton.disabled = (currentPage * limit) >= maxPokemons;
+    nextButton.disabled = currentPage * limit >= listaFiltrada.length;
 }
 
+// ✅ Botones de paginación
 prevButton.addEventListener('click', () => {
     if (currentPage > 1) {
         currentPage--;
-        obtenerPokemons();
+        mostrarPagina();
     }
 });
 
 nextButton.addEventListener('click', () => {
-    if ((currentPage * limit) < maxPokemons) {
+    if ((currentPage * limit) < listaFiltrada.length) {
         currentPage++;
-        obtenerPokemons();
+        mostrarPagina();
     }
 });
 
