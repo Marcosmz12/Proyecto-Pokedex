@@ -74,7 +74,12 @@ filtroTipo.addEventListener('change', async () => {
 
 // ✅ Función para obtener todos los Pokémon filtrados por tipo o paginados
 async function obtenerPokemons() {
-    seccionpokemons.innerHTML = "<p>Cargando Pokémon...</p>";
+    seccionpokemons.innerHTML = `
+    <div id="loading">
+        <img src='imagenes/pokeball.gif' alt='Cargando...'>
+        <p>Cargando Pokémon...</p>
+    </div>
+`;
 
     try {
         if (tipoSeleccionado === "todos") {
@@ -92,6 +97,10 @@ async function obtenerPokemons() {
 
             listaFiltrada = data.pokemon.map(p => p.pokemon); // Guardamos solo los Pokémon
         }
+        setTimeout(() => {
+            document.getElementById("loading").remove(); // Eliminar el mensaje de carga
+            mostrarPagina(); // Mostrar los Pokémon después del delay
+        }, 5000);
 
         mostrarPagina();
     } catch (error) {
