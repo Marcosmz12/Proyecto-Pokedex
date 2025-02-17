@@ -6,7 +6,7 @@ const filtroTipo = document.getElementById('filtro-tipo');
 const btnFiltrar = document.getElementById('btnFiltrar');
 let currentPage = 1;
 const limit = 20; // Número de Pokémon por página
-const maxPokemons = 1000; // Máximo de Pokémon a mostrar
+const maxPokemons = 1010; // Máximo de Pokémon a mostrar
 let pokemonData = []; // Array para almacenar los datos de los Pokémon
 
 async function obtenerPokemons() {
