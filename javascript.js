@@ -12,20 +12,34 @@ const buscador = document.getElementById('buscador');
 const botonBuscar = document.getElementById('boton-buscar');
 
 // ✅ Evento al hacer clic en el botón de búsqueda
-botonBuscar.addEventListener('click', () => {
-    let filtro = buscador.value.toLowerCase().trim();
+botonBuscar.addEventListener('click', async () => {
+    let filtro = buscador.value.toLowerCase().trim(); // Convertimos el input a minúsculas
 
     if (filtro === '') {
-        mostrarPagina(); // Si está vacío, vuelve a la paginación normal
+        mostrarPagina(); // Si está vacío, mostramos todo
         return;
     }
 
+    // Si la lista está vacía, obtenemos los datos
+    if (listaFiltrada.length === 0) {
+        await obtenerPokemons();
+    }
+
+    // Depuración: Verificar si Pikachu está en la lista
+    console.log(listaFiltrada.map(p => p.name)); // Ver qué nombres tenemos
+
     let resultados = listaFiltrada.filter(pokemon => {
-        let numero = pokemon.url.split('/').filter(Boolean).pop(); // Extrae el ID de la URL
-        return pokemon.name.includes(filtro) || numero === filtro;
+        let nombre = pokemon.name.toLowerCase(); // Convertimos el nombre a minúsculas
+        let numero = pokemon.url.split('/').filter(Boolean).pop(); // Extraemos el ID
+
+        return nombre.includes(filtro) || numero === filtro; // Coincidencia por nombre o ID
     });
 
-    mostrarResultadosBusqueda(resultados);
+    if (resultados.length > 0) {
+        mostrarResultadosBusqueda(resultados);
+    } else {
+        seccionpokemons.innerHTML = "<p>No se encontraron Pokémon.</p>";
+    }
 });
 
 // ✅ Función para mostrar solo los Pokémon filtrados
@@ -83,7 +97,7 @@ async function obtenerPokemons() {
     try {
         if (tipoSeleccionado === "todos") {
             // Modo normal (paginación de la lista general)
-            let URL = `https://pokeapi.co/api/v2/pokemon`;
+            let URL = `https://pokeapi.co/api/v2/pokemon/?limit=11000&offset=0`;
             const response = await fetch(URL);
             const data = await response.json();
             
@@ -440,8 +454,11 @@ async function mostrarPokemon(pokemon) {
         }
         
     }
-    
-    
+
+    divPokemon.addEventListener('click', () => {
+        window.location.href = `detalle.html?id=${pokemon.id}`;
+    });
+
     divPokemon.appendChild(divTipoPokemon);
     seccionpokemons.appendChild(divPokemon);
     console.log(pokemon);
