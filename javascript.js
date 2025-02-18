@@ -77,7 +77,6 @@ async function obtenerPokemons() {
     seccionpokemons.innerHTML = `
     <div id="loading">
         <img src='imagenes/pokeball.gif' alt='Cargando...'>
-        <p>Cargando Pokémon...</p>
     </div>
 `;
 
@@ -97,10 +96,6 @@ async function obtenerPokemons() {
 
             listaFiltrada = data.pokemon.map(p => p.pokemon); // Guardamos solo los Pokémon
         }
-        setTimeout(() => {
-            document.getElementById("loading").remove(); // Eliminar el mensaje de carga
-            mostrarPagina(); // Mostrar los Pokémon después del delay
-        }, 5000);
 
         mostrarPagina();
     } catch (error) {
@@ -189,93 +184,199 @@ async function mostrarPokemon(pokemon) {
     switch (pokemon.types[0].type.name) {
         case "grass":
             divPokemon.style.backgroundImage = "url(imagenes/fondopkmnplanta.png)";
-            divPokemon.style.borderColor = "#00c70c"
+            divPokemon.style.borderColor = "#00c70c";
             tipoPokemon.style.backgroundColor = "#7CFC00";
+            divPokemon.addEventListener("mouseover", () =>{
+                divPokemon.style.borderColor = "green";
+            });
+            divPokemon.addEventListener("mouseout", () =>{
+                divPokemon.style.borderColor = "#00c70c"
+            })
             break;
         case "poison":
             divPokemon.style.backgroundImage = "url(imagenes/fondoVeneno.png)";
             divPokemon.style.borderColor = "#a217b8";
             tipoPokemon.style.backgroundColor = "#8A2BE2";
+            divPokemon.addEventListener("mouseover", () =>{
+                divPokemon.style.borderColor = "red";
+            });
+            divPokemon.addEventListener("mouseout", () =>{
+                divPokemon.style.borderColor = "#a217b8"
+            })
             break;
         case "fire":
             divPokemon.style.backgroundImage = "url(imagenes/fondoFuegovolteado.png)";
             tipoPokemon.style.backgroundColor = "#FF4500";
+            divPokemon.addEventListener("mouseover", () =>{
+                divPokemon.style.borderColor = "#FF4500";
+            });
+            divPokemon.addEventListener("mouseout", () =>{
+                divPokemon.style.borderColor = "red"
+            });
             break;
         case "flying":
             divPokemon.style.backgroundImage = "url(imagenes/fondoVolador.png)";
             divPokemon.style.borderColor = "#f7dff1";
-
             tipoPokemon.style.backgroundColor = "#87CEEB";
+            divPokemon.addEventListener("mouseover", () =>{
+                divPokemon.style.borderColor = "blue";
+            });
+            divPokemon.addEventListener("mouseout", () =>{
+                divPokemon.style.borderColor = "#f7dff1"
+            });
             break;
         case "water":
             divPokemon.style.backgroundImage = "url(imagenes/fondoAgua.png)";
             divPokemon.style.borderColor = "#0070ff";
             tipoPokemon.style.backgroundColor = "#00BFFF";
+            divPokemon.addEventListener("mouseover", () =>{
+                divPokemon.style.borderColor = "blue";
+            });
+            divPokemon.addEventListener("mouseout", () =>{
+                divPokemon.style.borderColor = "#0070ff"
+            });
             break;
         case "bug":
             divPokemon.style.backgroundImage = "url(imagenes/fondoBicho.png)";
             divPokemon.style.borderColor = "#92ff2c";
             tipoPokemon.style.backgroundColor = "#32CD32";
+            divPokemon.addEventListener("mouseover", () =>{
+                divPokemon.style.borderColor = "blue";
+            });
+            divPokemon.addEventListener("mouseout", () =>{
+                divPokemon.style.borderColor = "#92ff2c"
+            });
             break;
         case "normal":
             divPokemon.style.backgroundImage = "url(imagenes/fondoNormales.png)";
             divPokemon.style.borderColor = "#b6b6b6";
             tipoPokemon.style.backgroundColor = "#A9A9A9";
+            divPokemon.addEventListener("mouseover", () =>{
+                divPokemon.style.borderColor = "blue";
+            });
+            divPokemon.addEventListener("mouseout", () =>{
+                divPokemon.style.borderColor = "#b6b6b6"
+            });
             break;
         case "electric":
             divPokemon.style.backgroundImage = "url(imagenes/fondoElectrico.png)";
             divPokemon.style.borderColor = "#f6ff31";
             tipoPokemon.style.backgroundColor = "#FFD700";
+            divPokemon.addEventListener("mouseover", () =>{
+                divPokemon.style.borderColor = "green";
+            });
+            divPokemon.addEventListener("mouseout", () =>{
+                divPokemon.style.borderColor = "#f6ff31";
+            });
             break;
         case "ground":
             divPokemon.style.backgroundImage = "url(imagenes/fondoTierra.png)";
             divPokemon.style.borderColor = "#eccb0f";
             tipoPokemon.style.backgroundColor = "#DAA520";
+            divPokemon.addEventListener("mouseover", () =>{
+                divPokemon.style.borderColor = "green";
+            });
+            divPokemon.addEventListener("mouseout", () =>{
+                divPokemon.style.borderColor = "#eccb0f";
+            });
             break;
         case "fairy":
             divPokemon.style.backgroundImage = "url(imagenes/fondoHada.png)";
             divPokemon.style.borderColor = "#ffa0b4"; 
             tipoPokemon.style.backgroundColor = "#FF69B4";
+            divPokemon.addEventListener("mouseover", () =>{
+                divPokemon.style.borderColor = "green";
+            });
+            divPokemon.addEventListener("mouseout", () =>{
+                divPokemon.style.borderColor = "#ffa0b4";
+            });
             break;
         case "fighting":
             divPokemon.style.borderColor = "#a00000";
             tipoPokemon.style.backgroundColor = "#B22222";
+            divPokemon.addEventListener("mouseover", () =>{
+                divPokemon.style.borderColor = "green";
+            });
+            divPokemon.addEventListener("mouseout", () =>{
+                divPokemon.style.borderColor = "#B22222";
+            });
             break;
         case "psychic":
             divPokemon.style.backgroundImage = "url(imagenes/fondoPsiquico.png)";
             divPokemon.style.borderColor = "#ba71f4";
             tipoPokemon.style.backgroundColor = "#FF1493";
+            divPokemon.addEventListener("mouseover", () =>{
+                divPokemon.style.borderColor = "green";
+            });
+            divPokemon.addEventListener("mouseout", () =>{
+                divPokemon.style.borderColor = "#ba71f4";
+            });
             break;
         case "rock":
             divPokemon.style.backgroundImage = "url(imagenes/fondoRoca.png)";
             divPokemon.style.borderColor = "#7f5618";
             tipoPokemon.style.backgroundColor = "#A0522D";
+            divPokemon.addEventListener("mouseover", () =>{
+                divPokemon.style.borderColor = "green";
+            });
+            divPokemon.addEventListener("mouseout", () =>{
+                divPokemon.style.borderColor = "#7f5618";
+            });
             break;
         case "steel":
             divPokemon.style.backgroundImage = "url(imagenes/fondoAcero.png)"
             divPokemon.style.borderColor = "#d0d0d0"; 
             tipoPokemon.style.backgroundColor = "#C0C0C0";
+            divPokemon.addEventListener("mouseover", () =>{
+                divPokemon.style.borderColor = "silver";
+            });
+            divPokemon.addEventListener("mouseout", () =>{
+                divPokemon.style.borderColor = "#d0d0d0";
+            });
             break;
         case "ice":
             divPokemon.style.backgroundImage = "url(imagenes/fondoHielo.png)";
             divPokemon.style.borderColor = "#70f0ff";
             tipoPokemon.style.backgroundColor = "#00BFFF";
+            divPokemon.addEventListener("mouseover", () =>{
+                divPokemon.style.borderColor = "silver";
+            });
+            divPokemon.addEventListener("mouseout", () =>{
+                divPokemon.style.borderColor = "#70f0ff";
+            });
             break;
         case "ghost":
             divPokemon.style.backgroundImage = "url(imagenes/fondoFantasma.png)";
             divPokemon.style.borderColor = "#5d4aa7"; 
             tipoPokemon.style.backgroundColor = "#4B0082";
+            divPokemon.addEventListener("mouseover", () =>{
+                divPokemon.style.borderColor = "silver";
+            });
+            divPokemon.addEventListener("mouseout", () =>{
+                divPokemon.style.borderColor = "#5d4aa7";
+            });
             break;
         case "dragon":
             divPokemon.style.backgroundImage = "url(imagenes/fondoDragon.png)";
             divPokemon.style.borderColor = "#a9e794"; 
             tipoPokemon.style.backgroundColor = "#0000FF";
+            divPokemon.addEventListener("mouseover", () =>{
+                divPokemon.style.borderColor = "silver";
+            });
+            divPokemon.addEventListener("mouseout", () =>{
+                divPokemon.style.borderColor = "#a9e794";
+            });
             break;
         case "dark":
             divPokemon.style.backgroundImage = "url(imagenes/fondoSiniestro.png)";
             divPokemon.style.borderColor = "#4c517e"; 
-            
             tipoPokemon.style.backgroundColor = "#000000";
+            divPokemon.addEventListener("mouseover", () =>{
+                divPokemon.style.borderColor = "#000000";
+            });
+            divPokemon.addEventListener("mouseout", () =>{
+                divPokemon.style.borderColor = "#4c517e";
+            });
             break;
     }
 
