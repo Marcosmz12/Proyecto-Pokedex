@@ -306,6 +306,7 @@ async function mostrarPokemon(pokemon) {
             });
             break;
         case "fighting":
+            divPokemon.style.backgroundImage ="url(imagenes/fondoLucha.png)";
             divPokemon.style.borderColor = "#a00000";
             tipoPokemon.style.backgroundColor = "#B22222";
             divPokemon.addEventListener("mouseover", () =>{
@@ -384,7 +385,7 @@ async function mostrarPokemon(pokemon) {
         case "dark":
             divPokemon.style.backgroundImage = "url(imagenes/fondoSiniestro.png)";
             divPokemon.style.borderColor = "#4c517e"; 
-            tipoPokemon.style.backgroundColor = "#000000";
+            tipoPokemon.style.backgroundColor = "#676a89";
             divPokemon.addEventListener("mouseover", () =>{
                 divPokemon.style.borderColor = "#000000";
             });
@@ -449,7 +450,7 @@ async function mostrarPokemon(pokemon) {
                 tipoPokemon2.style.backgroundColor = "#0000FF";
                 break;
             case "dark":
-                tipoPokemon2.style.backgroundColor = "#000000";
+                tipoPokemon2.style.backgroundColor = "#676a89";
                 break;
         }
         
