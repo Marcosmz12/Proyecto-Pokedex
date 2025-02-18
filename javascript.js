@@ -83,7 +83,7 @@ async function obtenerPokemons() {
     try {
         if (tipoSeleccionado === "todos") {
             // Modo normal (paginación de la lista general)
-            let URL = `https://pokeapi.co/api/v2/pokemon?limit=1010&offset=0`;
+            let URL = `https://pokeapi.co/api/v2/pokemon`;
             const response = await fetch(URL);
             const data = await response.json();
             
