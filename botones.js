@@ -10,7 +10,9 @@ async function obtenerDetallePokemon(id) {
 
         const resSpecies = await fetch(pokemon.species.url);
         const species = await resSpecies.json();
-
+        musica.setAttribute("src", "1-06. The Road To Veridian ~ From Pallet.mp3");
+        musica.load();
+        musica.play();
         mostrarDetalle(pokemon, species);
     } catch (error) {
         console.error('Error al obtener detalles del Pokémon:', error);
@@ -38,7 +40,7 @@ async function mostrarDetalle(pokemon, species) {
     titulo.textContent = `${pokemon.name} (#${pokemon.id})`;
 
     const imagen = document.createElement('img');
-    imagen.src = pokemon.sprites.front_default;
+    imagen.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`;
     imagen.alt = pokemon.name;
 
     const tipo = document.createElement('p');
@@ -383,7 +385,7 @@ async function obtenerEvoluciones(url) {
 async function obtenerImagenEvolucion(nombre) {
     const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${nombre}`);
     const pokemon = await res.json();
-    return pokemon.sprites.front_default;
+    return pokemon.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`;;
 }
 
 // ✅ Llamar a la función para obtener los detalles

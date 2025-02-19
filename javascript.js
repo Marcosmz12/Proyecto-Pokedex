@@ -99,7 +99,6 @@ async function obtenerPokemons() {
             let URL = `https://pokeapi.co/api/v2/pokemon/?limit=11000&offset=0`;
             const response = await fetch(URL);
             const data = await response.json();
-
             let musicaLab = document.getElementById("oak");
                 
             musicaLab.setAttribute("src", "1-04. Oak's Laboratory.mp3");
@@ -197,7 +196,7 @@ async function mostrarPokemon(pokemon) {
     tipoPokemon.classList.add('tipo1');
     numeroPokemon.textContent = `#${pokemon.id}`;
     nombrePokemon.textContent = pokemon.name;
-    imgPOkemon.src = pokemon.sprites.front_default;
+    imgPOkemon.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`;
     tipoPokemon.textContent = pokemon.types[0].type.name;
 
     divPokemon.appendChild(imgPOkemon);
@@ -251,7 +250,7 @@ async function mostrarPokemon(pokemon) {
             divPokemon.style.borderColor = "#f7dff1";
             tipoPokemon.style.backgroundColor = "#87CEEB";
             divPokemon.addEventListener("mouseover", () =>{
-                divPokemon.style.borderColor = "blue";
+                divPokemon.style.borderColor = "#3dc7ef";
             });
             divPokemon.addEventListener("mouseout", () =>{
                 divPokemon.style.borderColor = "#f7dff1"
@@ -273,7 +272,7 @@ async function mostrarPokemon(pokemon) {
             divPokemon.style.borderColor = "#92ff2c";
             tipoPokemon.style.backgroundColor = "#32CD32";
             divPokemon.addEventListener("mouseover", () =>{
-                divPokemon.style.borderColor = "blue";
+                divPokemon.style.borderColor = "#729f3f";
             });
             divPokemon.addEventListener("mouseout", () =>{
                 divPokemon.style.borderColor = "#92ff2c"

@@ -73,12 +73,23 @@ section {
 .cartaPokemonIndividual img {
     width: 240px;
     height:210px;
-    background:linear-gradient(yellow,pink);
-    
-    
+    background:linear-gradient(to bottom right, yellow,pink);
     border: 3px solid silver;
     border-top-left-radius: 45px;
     border-bottom-right-radius: 28px;
+}
+
+.ataques-pokemon{
+    background-color: blue;
+    width: 400px;
+    height: 640px;
+    border:12px solid red;
+    margin-block: 30px;
+    border-radius: 10px;
+    margin-inline: 20px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 ul {
@@ -111,7 +122,6 @@ footer p{
     width: 200px;
     height: 260px;
     margin: 15px;
-   
     border-radius: 10px;
     align-items: center;
 }
@@ -123,7 +133,6 @@ footer p{
     width: 200px;
     height: 260px;
     margin: 15px;
-    
     border-radius: 10px;
     align-items: center;
 }
@@ -135,7 +144,6 @@ footer p{
     width: 200px;
     height: 260px;
     margin: 15px;
-    
     border-radius: 10px;
     align-items: center;
 }
