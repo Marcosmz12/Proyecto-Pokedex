@@ -1,3 +1,13 @@
+@font-face {
+    font-family: Pokemon;
+    src: url(../Fuentes/Pokemon\ Solid.ttf) format("truetype");
+}
+@font-face {
+    font-family: Pokemon-hueco;
+    src: url(../Fuentes/Pokemon\ Hollow.ttf) format("truetype");
+}
+
+
 html, body{
     margin: 0px;
     padding: 0px;
@@ -19,9 +29,14 @@ header{
 main {
     background-image: url("../imagenes/pokemo151.webp");
     background-size:cover;
-    
+    text-align: center;
 }
-
+main a{
+    font-family: pokemon;
+    text-decoration: none;
+    color: black;
+    font-size: 30px;
+}
 
 section {
     
@@ -39,9 +54,16 @@ section {
     border-radius: 10px;
     margin-inline: 20px;
     display:flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
+    
+    align-items: center;
 
+}
+.cartaPokemonIndividual p{
+    margin: 7px;
+}
+.cartaPokemonIndividual p:last-child{
+    margin: 10px;
 }
 
 #descripcion {
@@ -50,17 +72,18 @@ section {
 }
 
 .cartaPokemonIndividual img {
-    width: 198px;
-    height:176px;
-    margin-top: 20px;
-    margin-left: 15px;
+    width: 240px;
+    height:210px;
+    background:linear-gradient(yellow,pink);
+    
+    
     border: 3px solid silver;
     border-top-left-radius: 45px;
     border-bottom-right-radius: 28px;
 }
 
 ul {
-    margin-top: 50px;
+    margin-top: 10px;
     height: fit-content;
 }
 table{
