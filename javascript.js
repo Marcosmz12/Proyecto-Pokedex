@@ -12,7 +12,7 @@ const buscador = document.getElementById('buscador');
 const botonBuscar = document.getElementById('boton-buscar');
 
 // ✅ Evento al hacer clic en el botón de búsqueda
-botonBuscar.addEventListener('click', async () => {
+buscador.addEventListener('input', async () => {
     let filtro = buscador.value.toLowerCase().trim(); // Convertimos el input a minúsculas
 
     if (filtro === '') {

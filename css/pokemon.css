@@ -38,24 +38,29 @@ main a{
 }
 
 section {
-    
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
 
-.cartaPokemonIndividual {
-    background-color: blue;
-    width: 400px;
-    height: 640px;
+.datosPokemon div{
+    color: white;
     border:12px solid red;
-    margin-block: 30px;
     border-radius: 10px;
     margin-inline: 20px;
+    margin-block: 30px;
     display:flex;
     flex-direction: column;
-    
     align-items: center;
+    height: 640px;
+    width: 400px;
+    background-color: blue;
+}
+
+.cartaPokemonIndividual {
+}
+
+.detallesPokemon{
 
 }
 .cartaPokemonIndividual p{
@@ -79,28 +84,42 @@ section {
     border-bottom-right-radius: 28px;
 }
 
-.ataques-pokemon{
-    background-color: blue;
-    width: 400px;
-    height: 640px;
-    border:12px solid red;
-    margin-block: 30px;
-    border-radius: 10px;
-    margin-inline: 20px;
-    display:flex;
-    flex-direction: column;
-    align-items: center;
+.tabla-estadisticas {
+    width: 50%; /* Ajusta la tabla al contenedor */
+    border-collapse: collapse;
+    margin-top: 10px;
+    background: rgba(255, 255, 255, 0.8); /* Fondo semitransparente */
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.tabla-estadisticas th, .tabla-estadisticas td {
+    border: 1px solid #ccc;
+    padding: 5px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.tabla-estadisticas th {
+    background: #f2f2f2;
 }
 
 ul {
     margin-top: 10px;
     height: fit-content;
 }
-table{
-    margin-top: 10px;
+
+.barra-contenedor {
+    width: 100%;
+    background: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
 }
 
-
+.barra-progreso {
+    height: 10px;
+    background: #4caf50;
+}
 
 footer {
     background-color: black;

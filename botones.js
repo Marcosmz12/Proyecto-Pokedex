@@ -29,11 +29,14 @@ function crearElementoError() {
 
 // ✅ Función para mostrar los detalles del Pokémon
 async function mostrarDetalle(pokemon, species) {
-    const contenedor = document.querySelector('.detalle-pokemon');
+    const contenedor = document.querySelector('.datosPokemon');
+    const contenedor2 = document.querySelector('.detallesPokemon')
 
     // Crear contenedor principal de la carta del Pokémon
     const cartaPokemon = document.createElement('div');
-    cartaPokemon.classList.add('cartaPokemonIndividual'); // Agregar clase
+    cartaPokemon.classList.add('cartaPokemonIndividual');
+    const detallesPokemon = document.createElement('div');
+    detallesPokemon.classList.add('detallesPokemon'); // Agregar clase
 
     // Crear elementos dinámicamente
     const titulo = document.createElement('h2');
@@ -72,18 +75,16 @@ async function mostrarDetalle(pokemon, species) {
 
     cartaPokemon.appendChild(tipo);
 
- 
-
     switch (pokemon.types[0].type.name) {
         case "grass":
             cartaPokemon.style.backgroundImage = "url(imagenes/fondopkmnplanta.png)";
             cartaPokemon.style.backgroundSize = "cover";
             cartaPokemon.style.borderColor = "#00c70c";
             tipo.style.backgroundColor = "#7CFC00";
-            cartaPokemon.addEventListener("mouseover", () =>{
+            cartaPokemon.addEventListener("mouseover", () => {
                 cartaPokemon.style.borderColor = "green";
             });
-            cartaPokemon.addEventListener("mouseout", () =>{
+            cartaPokemon.addEventListener("mouseout", () => {
                 cartaPokemon.style.borderColor = "#00c70c"
             })
             break;
@@ -92,10 +93,10 @@ async function mostrarDetalle(pokemon, species) {
             cartaPokemon.style.backgroundSize = "cover";
             cartaPokemon.style.borderColor = "#a217b8";
             tipo.style.backgroundColor = "#8A2BE2";
-            cartaPokemon.addEventListener("mouseover", () =>{
+            cartaPokemon.addEventListener("mouseover", () => {
                 cartaPokemon.style.borderColor = "red";
             });
-            cartaPokemon.addEventListener("mouseout", () =>{
+            cartaPokemon.addEventListener("mouseout", () => {
                 cartaPokemon.style.borderColor = "#a217b8"
             })
             break;
@@ -103,10 +104,10 @@ async function mostrarDetalle(pokemon, species) {
             cartaPokemon.style.backgroundImage = "url(imagenes/fondoFuegovolteado.png)";
             cartaPokemon.style.backgroundSize = "cover";
             tipo.style.backgroundColor = "#FF4500";
-            cartaPokemon.addEventListener("mouseover", () =>{
+            cartaPokemon.addEventListener("mouseover", () => {
                 cartaPokemon.style.borderColor = "#FF4500";
             });
-            cartaPokemon.addEventListener("mouseout", () =>{
+            cartaPokemon.addEventListener("mouseout", () => {
                 cartaPokemon.style.borderColor = "red"
             });
             break;
@@ -115,10 +116,10 @@ async function mostrarDetalle(pokemon, species) {
             cartaPokemon.style.backgroundSize = "cover";
             cartaPokemon.style.borderColor = "#f7dff1";
             tipo.style.backgroundColor = "#87CEEB";
-            cartaPokemon.addEventListener("mouseover", () =>{
+            cartaPokemon.addEventListener("mouseover", () => {
                 cartaPokemon.style.borderColor = "blue";
             });
-            cartaPokemon.addEventListener("mouseout", () =>{
+            cartaPokemon.addEventListener("mouseout", () => {
                 cartaPokemon.style.borderColor = "#f7dff1"
             });
             break;
@@ -127,10 +128,10 @@ async function mostrarDetalle(pokemon, species) {
             cartaPokemon.style.backgroundSize = "cover";
             cartaPokemon.style.borderColor = "#0070ff";
             tipo.style.backgroundColor = "#00BFFF";
-            cartaPokemon.addEventListener("mouseover", () =>{
+            cartaPokemon.addEventListener("mouseover", () => {
                 cartaPokemon.style.borderColor = "blue";
             });
-            cartaPokemon.addEventListener("mouseout", () =>{
+            cartaPokemon.addEventListener("mouseout", () => {
                 cartaPokemon.style.borderColor = "#0070ff"
             });
             break;
@@ -139,10 +140,10 @@ async function mostrarDetalle(pokemon, species) {
             cartaPokemon.style.backgroundSize = "cover";
             cartaPokemon.style.borderColor = "#92ff2c";
             tipo.style.backgroundColor = "#32CD32";
-            cartaPokemon.addEventListener("mouseover", () =>{
+            cartaPokemon.addEventListener("mouseover", () => {
                 cartaPokemon.style.borderColor = "blue";
             });
-            cartaPokemon.addEventListener("mouseout", () =>{
+            cartaPokemon.addEventListener("mouseout", () => {
                 cartaPokemon.style.borderColor = "#92ff2c"
             });
             break;
@@ -151,10 +152,10 @@ async function mostrarDetalle(pokemon, species) {
             cartaPokemon.style.backgroundSize = "cover";
             cartaPokemon.style.borderColor = "#b6b6b6";
             tipo.style.backgroundColor = "#A9A9A9";
-            cartaPokemon.addEventListener("mouseover", () =>{
+            cartaPokemon.addEventListener("mouseover", () => {
                 cartaPokemon.style.borderColor = "blue";
             });
-            cartaPokemon.addEventListener("mouseout", () =>{
+            cartaPokemon.addEventListener("mouseout", () => {
                 cartaPokemon.style.borderColor = "#b6b6b6"
             });
             break;
@@ -163,10 +164,10 @@ async function mostrarDetalle(pokemon, species) {
             cartaPokemon.style.backgroundSize = "cover";
             cartaPokemon.style.borderColor = "#f6ff31";
             tipo.style.backgroundColor = "#FFD700";
-            cartaPokemon.addEventListener("mouseover", () =>{
+            cartaPokemon.addEventListener("mouseover", () => {
                 cartaPokemon.style.borderColor = "green";
             });
-            cartaPokemon.addEventListener("mouseout", () =>{
+            cartaPokemon.addEventListener("mouseout", () => {
                 cartaPokemon.style.borderColor = "#f6ff31";
             });
             break;
@@ -175,34 +176,34 @@ async function mostrarDetalle(pokemon, species) {
             cartaPokemon.style.backgroundSize = "cover";
             cartaPokemon.style.borderColor = "#eccb0f";
             tipo.style.backgroundColor = "#DAA520";
-            cartaPokemon.addEventListener("mouseover", () =>{
+            cartaPokemon.addEventListener("mouseover", () => {
                 cartaPokemon.style.borderColor = "green";
             });
-            cartaPokemon.addEventListener("mouseout", () =>{
+            cartaPokemon.addEventListener("mouseout", () => {
                 cartaPokemon.style.borderColor = "#eccb0f";
             });
             break;
         case "fairy":
             cartaPokemon.style.backgroundImage = "url(imagenes/fondoHada.png)";
             cartaPokemon.style.backgroundSize = "cover";
-            cartaPokemon.style.borderColor = "#ffa0b4"; 
+            cartaPokemon.style.borderColor = "#ffa0b4";
             tipo.style.backgroundColor = "#FF69B4";
-            cartaPokemon.addEventListener("mouseover", () =>{
+            cartaPokemon.addEventListener("mouseover", () => {
                 cartaPokemon.style.borderColor = "green";
             });
-            cartaPokemon.addEventListener("mouseout", () =>{
+            cartaPokemon.addEventListener("mouseout", () => {
                 cartaPokemon.style.borderColor = "#ffa0b4";
             });
             break;
         case "fighting":
-            cartaPokemon.style.backgroundImage ="url(imagenes/fondoLucha.png)";
+            cartaPokemon.style.backgroundImage = "url(imagenes/fondoLucha.png)";
             cartaPokemon.style.backgroundSize = "cover";
             cartaPokemon.style.borderColor = "#a00000";
             tipo.style.backgroundColor = "#B22222";
-            cartaPokemon.addEventListener("mouseover", () =>{
+            cartaPokemon.addEventListener("mouseover", () => {
                 cartaPokemon.style.borderColor = "green";
             });
-            cartaPokemon.addEventListener("mouseout", () =>{
+            cartaPokemon.addEventListener("mouseout", () => {
                 cartaPokemon.style.borderColor = "#B22222";
             });
             break;
@@ -211,10 +212,10 @@ async function mostrarDetalle(pokemon, species) {
             cartaPokemon.style.backgroundSize = "cover";
             cartaPokemon.style.borderColor = "#ba71f4";
             tipo.style.backgroundColor = "#FF1493";
-            cartaPokemon.addEventListener("mouseover", () =>{
+            cartaPokemon.addEventListener("mouseover", () => {
                 cartaPokemon.style.borderColor = "green";
             });
-            cartaPokemon.addEventListener("mouseout", () =>{
+            cartaPokemon.addEventListener("mouseout", () => {
                 cartaPokemon.style.borderColor = "#ba71f4";
             });
             break;
@@ -223,22 +224,22 @@ async function mostrarDetalle(pokemon, species) {
             cartaPokemon.style.backgroundSize = "cover";
             cartaPokemon.style.borderColor = "#7f5618";
             tipo.style.backgroundColor = "#A0522D";
-            cartaPokemon.addEventListener("mouseover", () =>{
+            cartaPokemon.addEventListener("mouseover", () => {
                 cartaPokemon.style.borderColor = "green";
             });
-            cartaPokemon.addEventListener("mouseout", () =>{
+            cartaPokemon.addEventListener("mouseout", () => {
                 cartaPokemon.style.borderColor = "#7f5618";
             });
             break;
         case "steel":
             cartaPokemon.style.backgroundImage = "url(imagenes/fondoAcero.png)"
             cartaPokemon.style.backgroundSize = "cover";
-            cartaPokemon.style.borderColor = "#d0d0d0"; 
+            cartaPokemon.style.borderColor = "#d0d0d0";
             tipo.style.backgroundColor = "#C0C0C0";
-            cartaPokemon.addEventListener("mouseover", () =>{
+            cartaPokemon.addEventListener("mouseover", () => {
                 cartaPokemon.style.borderColor = "silver";
             });
-            cartaPokemon.addEventListener("mouseout", () =>{
+            cartaPokemon.addEventListener("mouseout", () => {
                 cartaPokemon.style.borderColor = "#d0d0d0";
             });
             break;
@@ -247,61 +248,91 @@ async function mostrarDetalle(pokemon, species) {
             cartaPokemon.style.backgroundSize = "cover";
             cartaPokemon.style.borderColor = "#70f0ff";
             tipo.style.backgroundColor = "#00BFFF";
-            cartaPokemon.addEventListener("mouseover", () =>{
+            cartaPokemon.addEventListener("mouseover", () => {
                 cartaPokemon.style.borderColor = "silver";
             });
-            cartaPokemon.addEventListener("mouseout", () =>{
+            cartaPokemon.addEventListener("mouseout", () => {
                 cartaPokemon.style.borderColor = "#70f0ff";
             });
             break;
         case "ghost":
             cartaPokemon.style.backgroundImage = "url(imagenes/fondoFantasma.png)";
             cartaPokemon.style.backgroundSize = "cover";
-            cartaPokemon.style.borderColor = "#5d4aa7"; 
+            cartaPokemon.style.borderColor = "#5d4aa7";
             tipo.style.backgroundColor = "#4B0082";
-            cartaPokemon.addEventListener("mouseover", () =>{
+            cartaPokemon.addEventListener("mouseover", () => {
                 cartaPokemon.style.borderColor = "silver";
             });
-            cartaPokemon.addEventListener("mouseout", () =>{
+            cartaPokemon.addEventListener("mouseout", () => {
                 cartaPokemon.style.borderColor = "#5d4aa7";
             });
             break;
         case "dragon":
             cartaPokemon.style.backgroundImage = "url(imagenes/fondoDragon.png)";
             cartaPokemon.style.backgroundSize = "cover";
-            cartaPokemon.style.borderColor = "#a9e794"; 
+            cartaPokemon.style.borderColor = "#a9e794";
             tipo.style.backgroundColor = "#0000FF";
-            cartaPokemon.addEventListener("mouseover", () =>{
+            cartaPokemon.addEventListener("mouseover", () => {
                 cartaPokemon.style.borderColor = "silver";
             });
-            cartaPokemon.addEventListener("mouseout", () =>{
+            cartaPokemon.addEventListener("mouseout", () => {
                 cartaPokemon.style.borderColor = "#a9e794";
             });
             break;
         case "dark":
             cartaPokemon.style.backgroundImage = "url(imagenes/fondoSiniestro.png)";
             cartaPokemon.style.backgroundSize = "cover";
-            cartaPokemon.style.borderColor = "#4c517e"; 
+            cartaPokemon.style.borderColor = "#4c517e";
             tipo.style.backgroundColor = "#676a89";
-            cartaPokemon.addEventListener("mouseover", () =>{
+            cartaPokemon.addEventListener("mouseover", () => {
                 cartaPokemon.style.borderColor = "#000000";
             });
-            cartaPokemon.addEventListener("mouseout", () =>{
+            cartaPokemon.addEventListener("mouseout", () => {
                 cartaPokemon.style.borderColor = "#4c517e";
             });
             break;
-        }
+    }
+
+    // Crear la tabla de estadísticas
+    const tablaStats = document.createElement('table');
+    tablaStats.classList.add('tabla-estadisticas');
+
+    // Encabezado de la tabla
+    tablaStats.innerHTML = `
+        <tr>
+            <th>Estadística</th>
+            <th>Valor</th>
+        </tr>`;
+
+    // Agregar cada estadística como una fila en la tabla
+    pokemon.stats.forEach(stat => {
+        const fila = document.createElement('tr');
+        fila.innerHTML = `
+            <td><strong>${stat.stat.name.toUpperCase()}</strong></td>
+            <td>
+                <div class="barra-contenedor">
+                    <div class="barra-progreso" style="width: ${stat.base_stat}%;"></div>
+                </div>
+            </td>
+        `;
+        tablaStats.appendChild(fila);
+    });
+
+    // Agregar la tabla a la carta
+    detallesPokemon.appendChild(tablaStats);
+
 
     // Añadir los elementos creados al contenedor de la carta del Pokémon
-    
+
     cartaPokemon.appendChild(peso);
     cartaPokemon.appendChild(altura);
     cartaPokemon.appendChild(habilidades);
-    cartaPokemon.appendChild(ataques);
-    cartaPokemon.appendChild(descripcion);
+    detallesPokemon.appendChild(ataques);
+    detallesPokemon.appendChild(descripcion);
 
     // Agregar la carta al contenedor principal
     contenedor.appendChild(cartaPokemon);
+    contenedor2.appendChild(detallesPokemon);
 
     // Obtener evoluciones
     obtenerEvoluciones(species.evolution_chain.url);
