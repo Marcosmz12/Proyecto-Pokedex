@@ -103,7 +103,7 @@ async function obtenerPokemons() {
                 
             musicaLab.setAttribute("src", "1-04. Oak's Laboratory.mp3");
             
-            musicaLab.play();
+            //musicaLab.play();
             
             listaFiltrada = data.results;
         } else {
@@ -116,14 +116,14 @@ async function obtenerPokemons() {
                 
                 musicaLab.setAttribute("src", "1-32. Pokémon Tower.mp3");
                 
-                musicaLab.play();
+                //musicaLab.play();
 
             } else {
                 let musicaLab = document.getElementById("oak");
                 
                 musicaLab.setAttribute("src", "1-04. Oak's Laboratory.mp3");
                 
-                musicaLab.play();
+                //musicaLab.play();
             }
             listaFiltrada = data.pokemon.map(p => p.pokemon); // Guardamos solo los Pokémon
         }
@@ -229,7 +229,7 @@ async function mostrarPokemon(pokemon) {
             divPokemon.style.borderColor = "#a217b8";
             tipoPokemon.style.backgroundColor = "#8A2BE2";
             divPokemon.addEventListener("mouseover", () =>{
-                divPokemon.style.borderColor = "red";
+                divPokemon.style.borderColor = "#a609a6";
             });
             divPokemon.addEventListener("mouseout", () =>{
                 divPokemon.style.borderColor = "#a217b8"
@@ -283,7 +283,7 @@ async function mostrarPokemon(pokemon) {
             divPokemon.style.borderColor = "#b6b6b6";
             tipoPokemon.style.backgroundColor = "#A9A9A9";
             divPokemon.addEventListener("mouseover", () =>{
-                divPokemon.style.borderColor = "blue";
+                divPokemon.style.borderColor = "#d0d2ea";
             });
             divPokemon.addEventListener("mouseout", () =>{
                 divPokemon.style.borderColor = "#b6b6b6"
@@ -294,7 +294,7 @@ async function mostrarPokemon(pokemon) {
             divPokemon.style.borderColor = "#f6ff31";
             tipoPokemon.style.backgroundColor = "#FFD700";
             divPokemon.addEventListener("mouseover", () =>{
-                divPokemon.style.borderColor = "green";
+                divPokemon.style.borderColor = "gold";
             });
             divPokemon.addEventListener("mouseout", () =>{
                 divPokemon.style.borderColor = "#f6ff31";
@@ -305,7 +305,7 @@ async function mostrarPokemon(pokemon) {
             divPokemon.style.borderColor = "#eccb0f";
             tipoPokemon.style.backgroundColor = "#DAA520";
             divPokemon.addEventListener("mouseover", () =>{
-                divPokemon.style.borderColor = "green";
+                divPokemon.style.borderColor = "#ec8b07";
             });
             divPokemon.addEventListener("mouseout", () =>{
                 divPokemon.style.borderColor = "#eccb0f";
@@ -316,7 +316,7 @@ async function mostrarPokemon(pokemon) {
             divPokemon.style.borderColor = "#ffa0b4"; 
             tipoPokemon.style.backgroundColor = "#FF69B4";
             divPokemon.addEventListener("mouseover", () =>{
-                divPokemon.style.borderColor = "green";
+                divPokemon.style.borderColor = "pink";
             });
             divPokemon.addEventListener("mouseout", () =>{
                 divPokemon.style.borderColor = "#ffa0b4";
@@ -327,7 +327,7 @@ async function mostrarPokemon(pokemon) {
             divPokemon.style.borderColor = "#a00000";
             tipoPokemon.style.backgroundColor = "#B22222";
             divPokemon.addEventListener("mouseover", () =>{
-                divPokemon.style.borderColor = "green";
+                divPokemon.style.borderColor = "#9e0f08";
             });
             divPokemon.addEventListener("mouseout", () =>{
                 divPokemon.style.borderColor = "#B22222";
@@ -338,7 +338,7 @@ async function mostrarPokemon(pokemon) {
             divPokemon.style.borderColor = "#ba71f4";
             tipoPokemon.style.backgroundColor = "#FF1493";
             divPokemon.addEventListener("mouseover", () =>{
-                divPokemon.style.borderColor = "green";
+                divPokemon.style.borderColor = "#bc17ff";
             });
             divPokemon.addEventListener("mouseout", () =>{
                 divPokemon.style.borderColor = "#ba71f4";
@@ -349,7 +349,7 @@ async function mostrarPokemon(pokemon) {
             divPokemon.style.borderColor = "#7f5618";
             tipoPokemon.style.backgroundColor = "#A0522D";
             divPokemon.addEventListener("mouseover", () =>{
-                divPokemon.style.borderColor = "green";
+                divPokemon.style.borderColor = "#572c2a";
             });
             divPokemon.addEventListener("mouseout", () =>{
                 divPokemon.style.borderColor = "#7f5618";
@@ -371,7 +371,7 @@ async function mostrarPokemon(pokemon) {
             divPokemon.style.borderColor = "#70f0ff";
             tipoPokemon.style.backgroundColor = "#00BFFF";
             divPokemon.addEventListener("mouseover", () =>{
-                divPokemon.style.borderColor = "silver";
+                divPokemon.style.borderColor = "#abfffa";
             });
             divPokemon.addEventListener("mouseout", () =>{
                 divPokemon.style.borderColor = "#70f0ff";
@@ -382,7 +382,7 @@ async function mostrarPokemon(pokemon) {
             divPokemon.style.borderColor = "#5d4aa7"; 
             tipoPokemon.style.backgroundColor = "#4B0082";
             divPokemon.addEventListener("mouseover", () =>{
-                divPokemon.style.borderColor = "silver";
+                divPokemon.style.borderColor = "#5f4c8e";
             });
             divPokemon.addEventListener("mouseout", () =>{
                 divPokemon.style.borderColor = "#5d4aa7";
