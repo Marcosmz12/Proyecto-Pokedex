@@ -26,7 +26,7 @@ function crearElementoError() {
 }
 
 // ✅ Función para mostrar los detalles del Pokémon
-function mostrarDetalle(pokemon, species) {
+async function mostrarDetalle(pokemon, species) {
     const contenedor = document.querySelector('.detalle-pokemon');
 
     // Crear contenedor principal de la carta del Pokémon
@@ -42,7 +42,10 @@ function mostrarDetalle(pokemon, species) {
     imagen.alt = pokemon.name;
 
     const tipo = document.createElement('p');
-    tipo.innerHTML = `<strong>Tipo:</strong> ${pokemon.types.map(t => t.type.name).join(', ')}`;
+    tipo.innerHTML = `<strong>Tipo:</strong> ${pokemon.types[0].type.name}`;
+    
+    
+
 
     const peso = document.createElement('p');
     peso.innerHTML = `<strong>Peso:</strong> ${pokemon.weight / 10} kg`;
@@ -65,10 +68,234 @@ function mostrarDetalle(pokemon, species) {
     const descripcion = document.createElement('p');
     descripcion.innerHTML = `<strong>Descripción:</strong> ${species.flavor_text_entries.find(e => e.language.name === "es").flavor_text}`;
 
-    // Añadir los elementos creados al contenedor de la carta del Pokémon
     cartaPokemon.appendChild(titulo);
     cartaPokemon.appendChild(imagen);
+
     cartaPokemon.appendChild(tipo);
+
+ 
+
+    switch (pokemon.types[0].type.name) {
+        case "grass":
+            cartaPokemon.style.backgroundImage = "url(imagenes/fondopkmnplanta.png)";
+            cartaPokemon.style.backgroundSize = "cover";
+            cartaPokemon.style.borderColor = "#00c70c";
+            tipo.style.backgroundColor = "#7CFC00";
+            cartaPokemon.addEventListener("mouseover", () =>{
+                cartaPokemon.style.borderColor = "green";
+            });
+            cartaPokemon.addEventListener("mouseout", () =>{
+                cartaPokemon.style.borderColor = "#00c70c"
+            })
+            break;
+        case "poison":
+            cartaPokemon.style.backgroundImage = "url(imagenes/fondoVeneno.png)";
+            cartaPokemon.style.backgroundSize = "cover";
+            cartaPokemon.style.borderColor = "#a217b8";
+            tipo.style.backgroundColor = "#8A2BE2";
+            cartaPokemon.addEventListener("mouseover", () =>{
+                cartaPokemon.style.borderColor = "red";
+            });
+            cartaPokemon.addEventListener("mouseout", () =>{
+                cartaPokemon.style.borderColor = "#a217b8"
+            })
+            break;
+        case "fire":
+            cartaPokemon.style.backgroundImage = "url(imagenes/fondoFuegovolteado.png)";
+            cartaPokemon.style.backgroundSize = "cover";
+            tipo.style.backgroundColor = "#FF4500";
+            cartaPokemon.addEventListener("mouseover", () =>{
+                cartaPokemon.style.borderColor = "#FF4500";
+            });
+            cartaPokemon.addEventListener("mouseout", () =>{
+                cartaPokemon.style.borderColor = "red"
+            });
+            break;
+        case "flying":
+            cartaPokemon.style.backgroundImage = "url(imagenes/fondoVolador.png)";
+            cartaPokemon.style.backgroundSize = "cover";
+            cartaPokemon.style.borderColor = "#f7dff1";
+            tipo.style.backgroundColor = "#87CEEB";
+            cartaPokemon.addEventListener("mouseover", () =>{
+                cartaPokemon.style.borderColor = "blue";
+            });
+            cartaPokemon.addEventListener("mouseout", () =>{
+                cartaPokemon.style.borderColor = "#f7dff1"
+            });
+            break;
+        case "water":
+            cartaPokemon.style.backgroundImage = "url(imagenes/fondoAgua.png)";
+            cartaPokemon.style.backgroundSize = "cover";
+            cartaPokemon.style.borderColor = "#0070ff";
+            tipo.style.backgroundColor = "#00BFFF";
+            cartaPokemon.addEventListener("mouseover", () =>{
+                cartaPokemon.style.borderColor = "blue";
+            });
+            cartaPokemon.addEventListener("mouseout", () =>{
+                cartaPokemon.style.borderColor = "#0070ff"
+            });
+            break;
+        case "bug":
+            cartaPokemon.style.backgroundImage = "url(imagenes/fondoBicho.png)";
+            cartaPokemon.style.backgroundSize = "cover";
+            cartaPokemon.style.borderColor = "#92ff2c";
+            tipo.style.backgroundColor = "#32CD32";
+            cartaPokemon.addEventListener("mouseover", () =>{
+                cartaPokemon.style.borderColor = "blue";
+            });
+            cartaPokemon.addEventListener("mouseout", () =>{
+                cartaPokemon.style.borderColor = "#92ff2c"
+            });
+            break;
+        case "normal":
+            cartaPokemon.style.backgroundImage = "url(imagenes/fondoNormales.png)";
+            cartaPokemon.style.backgroundSize = "cover";
+            cartaPokemon.style.borderColor = "#b6b6b6";
+            tipo.style.backgroundColor = "#A9A9A9";
+            cartaPokemon.addEventListener("mouseover", () =>{
+                cartaPokemon.style.borderColor = "blue";
+            });
+            cartaPokemon.addEventListener("mouseout", () =>{
+                cartaPokemon.style.borderColor = "#b6b6b6"
+            });
+            break;
+        case "electric":
+            cartaPokemon.style.backgroundImage = "url(imagenes/fondoElectrico.png)";
+            cartaPokemon.style.backgroundSize = "cover";
+            cartaPokemon.style.borderColor = "#f6ff31";
+            tipo.style.backgroundColor = "#FFD700";
+            cartaPokemon.addEventListener("mouseover", () =>{
+                cartaPokemon.style.borderColor = "green";
+            });
+            cartaPokemon.addEventListener("mouseout", () =>{
+                cartaPokemon.style.borderColor = "#f6ff31";
+            });
+            break;
+        case "ground":
+            cartaPokemon.style.backgroundImage = "url(imagenes/fondoTierra.png)";
+            cartaPokemon.style.backgroundSize = "cover";
+            cartaPokemon.style.borderColor = "#eccb0f";
+            tipo.style.backgroundColor = "#DAA520";
+            cartaPokemon.addEventListener("mouseover", () =>{
+                cartaPokemon.style.borderColor = "green";
+            });
+            cartaPokemon.addEventListener("mouseout", () =>{
+                cartaPokemon.style.borderColor = "#eccb0f";
+            });
+            break;
+        case "fairy":
+            cartaPokemon.style.backgroundImage = "url(imagenes/fondoHada.png)";
+            cartaPokemon.style.backgroundSize = "cover";
+            cartaPokemon.style.borderColor = "#ffa0b4"; 
+            tipo.style.backgroundColor = "#FF69B4";
+            cartaPokemon.addEventListener("mouseover", () =>{
+                cartaPokemon.style.borderColor = "green";
+            });
+            cartaPokemon.addEventListener("mouseout", () =>{
+                cartaPokemon.style.borderColor = "#ffa0b4";
+            });
+            break;
+        case "fighting":
+            cartaPokemon.style.backgroundImage ="url(imagenes/fondoLucha.png)";
+            cartaPokemon.style.backgroundSize = "cover";
+            cartaPokemon.style.borderColor = "#a00000";
+            tipo.style.backgroundColor = "#B22222";
+            cartaPokemon.addEventListener("mouseover", () =>{
+                cartaPokemon.style.borderColor = "green";
+            });
+            cartaPokemon.addEventListener("mouseout", () =>{
+                cartaPokemon.style.borderColor = "#B22222";
+            });
+            break;
+        case "psychic":
+            cartaPokemon.style.backgroundImage = "url(imagenes/fondoPsiquico.png)";
+            cartaPokemon.style.backgroundSize = "cover";
+            cartaPokemon.style.borderColor = "#ba71f4";
+            tipo.style.backgroundColor = "#FF1493";
+            cartaPokemon.addEventListener("mouseover", () =>{
+                cartaPokemon.style.borderColor = "green";
+            });
+            cartaPokemon.addEventListener("mouseout", () =>{
+                cartaPokemon.style.borderColor = "#ba71f4";
+            });
+            break;
+        case "rock":
+            cartaPokemon.style.backgroundImage = "url(imagenes/fondoRoca.png)";
+            cartaPokemon.style.backgroundSize = "cover";
+            cartaPokemon.style.borderColor = "#7f5618";
+            tipo.style.backgroundColor = "#A0522D";
+            cartaPokemon.addEventListener("mouseover", () =>{
+                cartaPokemon.style.borderColor = "green";
+            });
+            cartaPokemon.addEventListener("mouseout", () =>{
+                cartaPokemon.style.borderColor = "#7f5618";
+            });
+            break;
+        case "steel":
+            cartaPokemon.style.backgroundImage = "url(imagenes/fondoAcero.png)"
+            cartaPokemon.style.backgroundSize = "cover";
+            cartaPokemon.style.borderColor = "#d0d0d0"; 
+            tipo.style.backgroundColor = "#C0C0C0";
+            cartaPokemon.addEventListener("mouseover", () =>{
+                cartaPokemon.style.borderColor = "silver";
+            });
+            cartaPokemon.addEventListener("mouseout", () =>{
+                cartaPokemon.style.borderColor = "#d0d0d0";
+            });
+            break;
+        case "ice":
+            cartaPokemon.style.backgroundImage = "url(imagenes/fondoHielo.png)";
+            cartaPokemon.style.backgroundSize = "cover";
+            cartaPokemon.style.borderColor = "#70f0ff";
+            tipo.style.backgroundColor = "#00BFFF";
+            cartaPokemon.addEventListener("mouseover", () =>{
+                cartaPokemon.style.borderColor = "silver";
+            });
+            cartaPokemon.addEventListener("mouseout", () =>{
+                cartaPokemon.style.borderColor = "#70f0ff";
+            });
+            break;
+        case "ghost":
+            cartaPokemon.style.backgroundImage = "url(imagenes/fondoFantasma.png)";
+            cartaPokemon.style.backgroundSize = "cover";
+            cartaPokemon.style.borderColor = "#5d4aa7"; 
+            tipo.style.backgroundColor = "#4B0082";
+            cartaPokemon.addEventListener("mouseover", () =>{
+                cartaPokemon.style.borderColor = "silver";
+            });
+            cartaPokemon.addEventListener("mouseout", () =>{
+                cartaPokemon.style.borderColor = "#5d4aa7";
+            });
+            break;
+        case "dragon":
+            cartaPokemon.style.backgroundImage = "url(imagenes/fondoDragon.png)";
+            cartaPokemon.style.backgroundSize = "cover";
+            cartaPokemon.style.borderColor = "#a9e794"; 
+            tipo.style.backgroundColor = "#0000FF";
+            cartaPokemon.addEventListener("mouseover", () =>{
+                cartaPokemon.style.borderColor = "silver";
+            });
+            cartaPokemon.addEventListener("mouseout", () =>{
+                cartaPokemon.style.borderColor = "#a9e794";
+            });
+            break;
+        case "dark":
+            cartaPokemon.style.backgroundImage = "url(imagenes/fondoSiniestro.png)";
+            cartaPokemon.style.backgroundSize = "cover";
+            cartaPokemon.style.borderColor = "#4c517e"; 
+            tipo.style.backgroundColor = "#676a89";
+            cartaPokemon.addEventListener("mouseover", () =>{
+                cartaPokemon.style.borderColor = "#000000";
+            });
+            cartaPokemon.addEventListener("mouseout", () =>{
+                cartaPokemon.style.borderColor = "#4c517e";
+            });
+            break;
+        }
+
+    // Añadir los elementos creados al contenedor de la carta del Pokémon
+    
+   
     cartaPokemon.appendChild(peso);
     cartaPokemon.appendChild(altura);
     cartaPokemon.appendChild(habilidades);
@@ -126,3 +353,4 @@ async function obtenerImagenEvolucion(nombre) {
 if (pokemonId) {
     obtenerDetallePokemon(pokemonId);
 }
+
