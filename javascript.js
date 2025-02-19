@@ -99,6 +99,12 @@ async function obtenerPokemons() {
             let URL = `https://pokeapi.co/api/v2/pokemon/?limit=11000&offset=0`;
             const response = await fetch(URL);
             const data = await response.json();
+
+            let musicaLab = document.getElementById("oak");
+                
+            musicaLab.setAttribute("src", "1-04. Oak's Laboratory.mp3");
+            
+            musicaLab.play();
             
             listaFiltrada = data.results;
         } else {
@@ -107,9 +113,18 @@ async function obtenerPokemons() {
             const response = await fetch(`https://pokeapi.co/api/v2/type/${tipoIngles}`);
             const data = await response.json();
             if (tipoIngles === "ghost"){
-                let ghostMusic = new Audio("1-32.Pokemon Tower.mp3");
-                ghostMusic.play();
+                let musicaLab = document.getElementById("oak");
+                
+                musicaLab.setAttribute("src", "1-32. Pokémon Tower.mp3");
+                
+                musicaLab.play();
 
+            } else {
+                let musicaLab = document.getElementById("oak");
+                
+                musicaLab.setAttribute("src", "1-04. Oak's Laboratory.mp3");
+                
+                musicaLab.play();
             }
             listaFiltrada = data.pokemon.map(p => p.pokemon); // Guardamos solo los Pokémon
         }
