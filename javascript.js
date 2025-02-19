@@ -456,7 +456,7 @@ async function mostrarPokemon(pokemon) {
     }
 
     divPokemon.addEventListener('click', () => {
-        window.location.href = `detalle.html?id=${pokemon.id}`;
+        window.location.href = `pokemon.html?id=${pokemon.id}`;
     });
 
     divPokemon.appendChild(divTipoPokemon);

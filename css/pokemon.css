@@ -1,91 +1,95 @@
-html, body {
+html, body{
     margin: 0px;
     padding: 0px;
 }
 
-header {
+header{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #FF4444;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: red;
+    padding: 10px;
 }
 
-#logo-pokemon {
-    height: 120px;
-    width: 300px;
-    margin-bottom: 15px;
+#logo-pokemon{
+    height: 100px;
+    width:  250px;
 }
 
 main {
     background-image: url("../imagenes/pokemo151.webp");
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
+    background-size:cover;
+    
 }
 
+
 section {
+    
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
 }
 
 .cartaPokemonIndividual {
-    background-color: #fff;
-    width: 350px;
-    height: auto;
-    max-width: 400px;
-    border: 8px solid #FF4444;
-    margin: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 15px;
+    background-color: blue;
+    width: 400px;
+    height: 640px;
+    border:12px solid red;
+    margin-block: 30px;
+    border-radius: 10px;
+    margin-inline: 20px;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+
+#descripcion {
+    display: block;
+
 }
 
 .cartaPokemonIndividual img {
-    width: 220px;
-    height: 220px;
+    width: 198px;
+    height:176px;
     margin-top: 20px;
-    margin-bottom: 20px;
-    border-radius: 50%;
-    border: 5px solid #ddd;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-p {
-    font-size: 16px;
-    color: #555;
-    margin: 8px 0;
-}
-
-p strong {
-    color: #FF4444;
+    margin-left: 15px;
+    border: 3px solid silver;
+    border-top-left-radius: 45px;
+    border-bottom-right-radius: 28px;
 }
 
 ul {
-    padding-left: 20px;
+    margin-top: 50px;
+    height: fit-content;
+}
+table{
     margin-top: 10px;
 }
 
-ul li {
-    margin-bottom: 5px;
-    font-size: 16px;
-    color: #555;
+.evolucionespokemon {
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+    width: 200px;
+    height: 320px;
+    margin: 50px;
+    border: 7px solid red;
+    border-radius: 10px;
+    align-items: center;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    margin: 0px;
+    padding: 20px; /* Espaciado interno */
+    text-align: center; /* Centrado de texto */
+    position: relative;
+    bottom: 0;
+}
+footer p{
+    text-align: center;
 }
 
 .primeraEvolucion {
@@ -122,18 +126,4 @@ ul li {
     border: 7px solid red;
     border-radius: 10px;
     align-items: center;
-}
-
-footer {
-    background-color: #333;
-    color: white;
-    padding: 15px;
-    text-align: center;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
-
-footer p {
-    font-size: 14px;
 }
