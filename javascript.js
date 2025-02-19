@@ -103,7 +103,7 @@ async function obtenerPokemons() {
                 
             musicaLab.setAttribute("src", "1-04. Oak's Laboratory.mp3");
             
-            //musicaLab.play();
+            musicaLab.play();
             
             listaFiltrada = data.results;
         } else {
@@ -116,14 +116,14 @@ async function obtenerPokemons() {
                 
                 musicaLab.setAttribute("src", "1-32. Pokémon Tower.mp3");
                 
-                //musicaLab.play();
+                musicaLab.play();
 
             } else {
                 let musicaLab = document.getElementById("oak");
                 
                 musicaLab.setAttribute("src", "1-04. Oak's Laboratory.mp3");
                 
-                //musicaLab.play();
+                musicaLab.play();
             }
             listaFiltrada = data.pokemon.map(p => p.pokemon); // Guardamos solo los Pokémon
         }
