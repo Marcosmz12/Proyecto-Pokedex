@@ -30,7 +30,7 @@ function crearElementoError() {
 // ✅ Función para mostrar los detalles del Pokémon
 async function mostrarDetalle(pokemon, species) {
     const contenedor = document.querySelector('.datosPokemon');
-    const contenedor2 = document.querySelector('.detallesPokemon')
+    
 
     // Crear contenedor principal de la carta del Pokémon
     const cartaPokemon = document.createElement('div');
@@ -332,7 +332,7 @@ async function mostrarDetalle(pokemon, species) {
 
     // Agregar la carta al contenedor principal
     contenedor.appendChild(cartaPokemon);
-    contenedor2.appendChild(detallesPokemon);
+    contenedor.appendChild(detallesPokemon);
 
     // Obtener evoluciones
     obtenerEvoluciones(species.evolution_chain.url);

@@ -45,6 +45,10 @@ section {
 
 .datosPokemon div{
     color: white;
+   
+}
+
+.cartaPokemonIndividual {
     border:12px solid red;
     border-radius: 10px;
     margin-inline: 20px;
@@ -57,10 +61,17 @@ section {
     background-color: blue;
 }
 
-.cartaPokemonIndividual {
-}
-
 .detallesPokemon{
+    border:12px solid red;
+    border-radius: 10px;
+    margin-inline: 20px;
+    margin-block: 30px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    height: 640px;
+    width: 400px;
+    background-color: blue;
 
 }
 .cartaPokemonIndividual p{
