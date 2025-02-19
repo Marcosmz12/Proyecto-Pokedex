@@ -141,12 +141,12 @@ footer {
 footer p{
     text-align: center;
 }
-h2{
+h3{
     margin-top: 100px;
     margin-bottom: 5px;
     font-family: pokemon;
     font-size: 50px;
-    color: rgb(12, 128, 83);
+    color: rgb(12, 128, 64);
 }
 .primeraEvolucion {
     display: flex;
