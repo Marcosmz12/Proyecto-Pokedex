@@ -455,6 +455,7 @@ async function mostrarDetalle(pokemon, species) {
                 <div class="barra-contenedor">
                     <div class="barra-progreso" style="width: ${stat.base_stat}%;"></div>
                 </div>
+                <span class="stat-valor">${stat.base_stat}</span> 
             </td>
         `;
         tablaStats.appendChild(fila);
