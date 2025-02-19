@@ -43,9 +43,6 @@ async function mostrarDetalle(pokemon, species) {
 
     const tipo = document.createElement('p');
     tipo.innerHTML = `<strong>Tipo:</strong> ${pokemon.types[0].type.name}`;
-    
-    
-
 
     const peso = document.createElement('p');
     peso.innerHTML = `<strong>Peso:</strong> ${pokemon.weight / 10} kg`;
@@ -318,29 +315,63 @@ async function obtenerEvoluciones(url) {
         let evoluciones = [];
         let actual = data.chain;
 
+        // Extraer las evoluciones en el orden correcto
         while (actual) {
             evoluciones.push(actual.species.name);
             actual = actual.evolves_to.length ? actual.evolves_to[0] : null;
         }
 
-        // Crear el contenedor de evoluciones con imágenes
-        const evolucionesElement = document.createElement('div');
-        evolucionesElement.classList.add('evolucionespokemon'); // Agregar clase
+        // Crear los tres contenedores para las evoluciones
+        const primeraEvolucion = document.createElement('div');
+        primeraEvolucion.classList.add('primeraEvolucion');
+        const segundaEvolucion = document.createElement('div');
+        segundaEvolucion.classList.add('segundaEvolucion');
+        const terceraEvolucion = document.createElement('div');
+        terceraEvolucion.classList.add('terceraEvolucion'); // Agregar clase
 
-        // Agregar imágenes y nombres de las evoluciones
-        for (const evolucion of evoluciones) {
-            const imagenEvo = await obtenerImagenEvolucion(evolucion);
+        // Añadir imágenes de las evoluciones según corresponda en cada contenedor
+        if (evoluciones[0]) {
+            const imagenEvo = await obtenerImagenEvolucion(evoluciones[0]);
             const imgEvo = document.createElement('img');
             imgEvo.src = imagenEvo;
-            imgEvo.alt = evolucion;
-            evolucionesElement.appendChild(imgEvo);
+            imgEvo.alt = evoluciones[0];
+            primeraEvolucion.appendChild(imgEvo);
         }
 
-        document.querySelector('.detalle-pokemon').appendChild(evolucionesElement);
+        if (evoluciones[1]) {
+            const imagenEvo = await obtenerImagenEvolucion(evoluciones[1]);
+            const imgEvo = document.createElement('img');
+            imgEvo.src = imagenEvo;
+            imgEvo.alt = evoluciones[1];
+            segundaEvolucion.appendChild(imgEvo);
+        }
+
+        if (evoluciones[2]) {
+            const imagenEvo = await obtenerImagenEvolucion(evoluciones[2]);
+            const imgEvo = document.createElement('img');
+            imgEvo.src = imagenEvo;
+            imgEvo.alt = evoluciones[2];
+            terceraEvolucion.appendChild(imgEvo);
+        }
+
+        // Agregar los contenedores al DOM
+        const contenedorEvoluciones = document.querySelector('.detalle-pokemon');
+        if (primeraEvolucion.childNodes.length > 0) contenedorEvoluciones.appendChild(primeraEvolucion);
+        if (segundaEvolucion.childNodes.length > 0) contenedorEvoluciones.appendChild(segundaEvolucion);
+        if (terceraEvolucion.childNodes.length > 0) contenedorEvoluciones.appendChild(terceraEvolucion);
+
     } catch (error) {
         console.error("Error al obtener evoluciones:", error);
     }
 }
+
+// ✅ Función para obtener la imagen de una evolución
+async function obtenerImagenEvolucion(nombre) {
+    const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${nombre}`);
+    const pokemon = await res.json();
+    return pokemon.sprites.front_default;
+}
+
 
 // ✅ Función para obtener la imagen de una evolución
 async function obtenerImagenEvolucion(nombre) {

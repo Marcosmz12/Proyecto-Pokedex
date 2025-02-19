@@ -88,25 +88,40 @@ ul li {
     color: #555;
 }
 
-.evolucionespokemon {
+.primeraEvolucion {
     display: flex;
     flex-direction: column;
-    align-items: center;
     opacity: 1;
-    width: 250px;
-    padding: 15px;
-    border: 7px solid #FF4444;
+    width: 200px;
+    height: 320px;
+    margin: 15px;
+    border: 7px solid red;
     border-radius: 10px;
-    margin: 20px 0;
-    background-color: #f7f7f7;
+    align-items: center;
 }
 
-.evolucionespokemon img {
-    width: 100px;
-    height: 100px;
-    margin: 10px;
-    border-radius: 50%;
-    border: 3px solid #FF4444;
+.segundaEvolucion {
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+    width: 200px;
+    height: 320px;
+    margin: 15px;
+    border: 7px solid red;
+    border-radius: 10px;
+    align-items: center;
+}
+
+.terceraEvolucion {
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+    width: 200px;
+    height: 320px;
+    margin: 15px;
+    border: 7px solid red;
+    border-radius: 10px;
+    align-items: center;
 }
 
 footer {
