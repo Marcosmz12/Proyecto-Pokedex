@@ -292,7 +292,6 @@ async function mostrarDetalle(pokemon, species) {
 
     // Añadir los elementos creados al contenedor de la carta del Pokémon
     
-   
     cartaPokemon.appendChild(peso);
     cartaPokemon.appendChild(altura);
     cartaPokemon.appendChild(habilidades);
@@ -329,10 +328,21 @@ async function obtenerEvoluciones(url) {
         const terceraEvolucion = document.createElement('div');
         terceraEvolucion.classList.add('terceraEvolucion'); // Agregar clase
 
+        primeraEvolucion.addEventListener('click', () => {
+            window.location.href = `detalle.html?id=${evoluciones[0]}`;
+        });
+
+        segundaEvolucion.addEventListener('click', () => {
+            window.location.href = `detalle.html?id=${evoluciones[1]}`;
+        });
+
+        terceraEvolucion.addEventListener('click', () => {
+            window.location.href = `detalle.html?id=${evoluciones[2]}`;
+        });
+
         // Añadir imágenes de las evoluciones según corresponda en cada contenedor
         if (evoluciones[0]) {
             const imagenEvo = await obtenerImagenEvolucion(evoluciones[0]);
-            
             const imgEvo = document.createElement('img');
             imgEvo.classList.add("imgPrimeraEvolucion");
             imgEvo.src = imagenEvo;
@@ -368,14 +378,6 @@ async function obtenerEvoluciones(url) {
         console.error("Error al obtener evoluciones:", error);
     }
 }
-
-// ✅ Función para obtener la imagen de una evolución
-async function obtenerImagenEvolucion(nombre) {
-    const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${nombre}`);
-    const pokemon = await res.json();
-    return pokemon.sprites.front_default;
-}
-
 
 // ✅ Función para obtener la imagen de una evolución
 async function obtenerImagenEvolucion(nombre) {
