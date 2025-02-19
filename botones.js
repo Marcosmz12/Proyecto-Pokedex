@@ -332,7 +332,9 @@ async function obtenerEvoluciones(url) {
         // Añadir imágenes de las evoluciones según corresponda en cada contenedor
         if (evoluciones[0]) {
             const imagenEvo = await obtenerImagenEvolucion(evoluciones[0]);
+            
             const imgEvo = document.createElement('img');
+            imgEvo.classList.add("imgPrimeraEvolucion");
             imgEvo.src = imagenEvo;
             imgEvo.alt = evoluciones[0];
             primeraEvolucion.appendChild(imgEvo);
@@ -341,6 +343,7 @@ async function obtenerEvoluciones(url) {
         if (evoluciones[1]) {
             const imagenEvo = await obtenerImagenEvolucion(evoluciones[1]);
             const imgEvo = document.createElement('img');
+            imgEvo.classList.add("imgSegundaEvolucion");
             imgEvo.src = imagenEvo;
             imgEvo.alt = evoluciones[1];
             segundaEvolucion.appendChild(imgEvo);
@@ -349,13 +352,14 @@ async function obtenerEvoluciones(url) {
         if (evoluciones[2]) {
             const imagenEvo = await obtenerImagenEvolucion(evoluciones[2]);
             const imgEvo = document.createElement('img');
+            imgEvo.classList.add("imgTerceraEvolucion");
             imgEvo.src = imagenEvo;
             imgEvo.alt = evoluciones[2];
             terceraEvolucion.appendChild(imgEvo);
         }
 
         // Agregar los contenedores al DOM
-        const contenedorEvoluciones = document.querySelector('.detalle-pokemon');
+        const contenedorEvoluciones = document.querySelector('.evoluciones');
         if (primeraEvolucion.childNodes.length > 0) contenedorEvoluciones.appendChild(primeraEvolucion);
         if (segundaEvolucion.childNodes.length > 0) contenedorEvoluciones.appendChild(segundaEvolucion);
         if (terceraEvolucion.childNodes.length > 0) contenedorEvoluciones.appendChild(terceraEvolucion);

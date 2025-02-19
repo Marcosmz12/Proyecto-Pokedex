@@ -67,17 +67,7 @@ table{
     margin-top: 10px;
 }
 
-.evolucionespokemon {
-    display: flex;
-    flex-direction: column;
-    opacity: 1;
-    width: 200px;
-    height: 320px;
-    margin: 50px;
-    border: 7px solid red;
-    border-radius: 10px;
-    align-items: center;
-}
+
 
 footer {
     background-color: black;
@@ -97,9 +87,9 @@ footer p{
     flex-direction: column;
     opacity: 1;
     width: 200px;
-    height: 320px;
+    height: 260px;
     margin: 15px;
-    border: 7px solid red;
+   
     border-radius: 10px;
     align-items: center;
 }
@@ -109,9 +99,9 @@ footer p{
     flex-direction: column;
     opacity: 1;
     width: 200px;
-    height: 320px;
+    height: 260px;
     margin: 15px;
-    border: 7px solid red;
+    
     border-radius: 10px;
     align-items: center;
 }
@@ -121,9 +111,21 @@ footer p{
     flex-direction: column;
     opacity: 1;
     width: 200px;
-    height: 320px;
+    height: 260px;
     margin: 15px;
-    border: 7px solid red;
+    
     border-radius: 10px;
     align-items: center;
+}
+
+.primeraEvolucion img , .segundaEvolucion img, .terceraEvolucion img {
+    background: linear-gradient(to bottom right,yellow,pink) ;
+    border: 5px solid rgb(196, 191, 191);
+    margin-top: 20px;
+    
+    width:170px;
+    height: 160px;
+    border-top-left-radius:40px;
+    border-bottom-right-radius: 25px;
+
 }
