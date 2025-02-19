@@ -106,7 +106,11 @@ async function obtenerPokemons() {
             let tipoIngles = typeMapping[tipoSeleccionado];
             const response = await fetch(`https://pokeapi.co/api/v2/type/${tipoIngles}`);
             const data = await response.json();
+            if (tipoIngles === "ghost"){
+                let ghostMusic = new Audio("1-32.Pokemon Tower.mp3");
+                ghostMusic.play();
 
+            }
             listaFiltrada = data.pokemon.map(p => p.pokemon); // Guardamos solo los Pokémon
         }
 
