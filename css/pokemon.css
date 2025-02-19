@@ -93,7 +93,7 @@ section {
 }
 
 .tabla-estadisticas {
-    width: 50%; /* Ajusta la tabla al contenedor */
+    width: 80%; /* Ajusta la tabla al contenedor */
     border-collapse: collapse;
     margin-top: 10px;
     background: rgba(255, 255, 255, 0.8); /* Fondo semitransparente */
