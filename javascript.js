@@ -91,9 +91,8 @@ async function obtenerPokemons() {
     seccionpokemons.innerHTML = `
     <div id="loading">
         <img src='imagenes/pokeball.gif' alt='Cargando...'>
-    </div>
-`;
-
+    </div>`;
+    
     try {
         if (tipoSeleccionado === "todos") {
             // Modo normal (paginación de la lista general)
