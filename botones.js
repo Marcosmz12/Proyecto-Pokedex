@@ -202,13 +202,13 @@ async function mostrarDetalle(pokemon, species) {
             detallesPokemon.style.backgroundSize = "cover";
             detallesPokemon.style.borderColor = "#b6b6b6";
             cartaPokemon.addEventListener("mouseover", () => {
-                cartaPokemon.style.borderColor = "blue";
+                cartaPokemon.style.borderColor = "grey";
             });
             cartaPokemon.addEventListener("mouseout", () => {
                 cartaPokemon.style.borderColor = "#b6b6b6"
             });
             detallesPokemon.addEventListener("mouseover", () => {
-                detallesPokemon.style.borderColor = "blue";
+                detallesPokemon.style.borderColor = "grey";
             });
             detallesPokemon.addEventListener("mouseout", () => {
                 detallesPokemon.style.borderColor = "#b6b6b6"
@@ -222,13 +222,13 @@ async function mostrarDetalle(pokemon, species) {
             detallesPokemon.style.backgroundSize = "cover";
             detallesPokemon.style.borderColor = "#f6ff31";
             cartaPokemon.addEventListener("mouseover", () => {
-                cartaPokemon.style.borderColor = "green";
+                cartaPokemon.style.borderColor = "greenyellow";
             });
             cartaPokemon.addEventListener("mouseout", () => {
                 cartaPokemon.style.borderColor = "#f6ff31";
             });
             detallesPokemon.addEventListener("mouseover", () => {
-                detallesPokemon.style.borderColor = "green";
+                detallesPokemon.style.borderColor = "greenyellow";
             });
             detallesPokemon.addEventListener("mouseout", () => {
                 detallesPokemon.style.borderColor = "#f6ff31";
@@ -242,13 +242,13 @@ async function mostrarDetalle(pokemon, species) {
             detallesPokemon.style.backgroundSize = "cover";
             detallesPokemon.style.borderColor = "#eccb0f";
             cartaPokemon.addEventListener("mouseover", () => {
-                cartaPokemon.style.borderColor = "green";
+                cartaPokemon.style.borderColor = "yellow";
             });
             cartaPokemon.addEventListener("mouseout", () => {
                 cartaPokemon.style.borderColor = "#eccb0f";
             });
             detallesPokemon.addEventListener("mouseover", () => {
-                detallesPokemon.style.borderColor = "green";
+                detallesPokemon.style.borderColor = "yellow";
             });
             detallesPokemon.addEventListener("mouseout", () => {
                 detallesPokemon.style.borderColor = "#eccb0f";
@@ -262,13 +262,13 @@ async function mostrarDetalle(pokemon, species) {
             detallesPokemon.style.backgroundSize = "cover";
             detallesPokemon.style.borderColor = "#ffa0b4";
             cartaPokemon.addEventListener("mouseover", () => {
-                cartaPokemon.style.borderColor = "green";
+                cartaPokemon.style.borderColor = "pink";
             });
             cartaPokemon.addEventListener("mouseout", () => {
                 cartaPokemon.style.borderColor = "#ffa0b4";
             });
             detallesPokemon.addEventListener("mouseover", () => {
-                detallesPokemon.style.borderColor = "green";
+                detallesPokemon.style.borderColor = "pink";
             });
             detallesPokemon.addEventListener("mouseout", () => {
                 detallesPokemon.style.borderColor = "#ffa0b4";
@@ -282,13 +282,13 @@ async function mostrarDetalle(pokemon, species) {
             detallesPokemon.style.backgroundSize = "cover";
             detallesPokemon.style.borderColor = "#a00000";
             cartaPokemon.addEventListener("mouseover", () => {
-                cartaPokemon.style.borderColor = "green";
+                cartaPokemon.style.borderColor = "red";
             });
             cartaPokemon.addEventListener("mouseout", () => {
                 cartaPokemon.style.borderColor = "#B22222";
             });
             detallesPokemon.addEventListener("mouseover", () => {
-                detallesPokemon.style.borderColor = "green";
+                detallesPokemon.style.borderColor = "red";
             });
             detallesPokemon.addEventListener("mouseout", () => {
                 detallesPokemon.style.borderColor = "#B22222";
