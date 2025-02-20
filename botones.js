@@ -10,8 +10,9 @@ async function obtenerDetallePokemon(id) {
 
         const resSpecies = await fetch(pokemon.species.url);
         const species = await resSpecies.json();
+        let musica = document.getElementById("musica");
         musica.setAttribute("src", "1-06. The Road To Veridian ~ From Pallet.mp3");
-        
+        musica.load();
         musica.play();
         mostrarDetalle(pokemon, species);
     } catch (error) {
